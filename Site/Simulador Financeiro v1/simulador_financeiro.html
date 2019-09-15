@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulador Financeiro</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(1, 121, 177);
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.ativar) {
+  background-color: #111;
+}
+
+.ativar {
+  background-color: rgb(3, 52, 85);
+}
+
+.fundo {
+    background-color: rgb(56, 56, 56);
+}
+
+.H1 {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(0, 144, 211);
+}
+
+.Simulador {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(1, 121, 177);
+}
+
+.box_esquerda {
+    background-color: rgb(1, 121, 177);
+    width: 300px;
+    padding: 50px;
+    margin-top: -25px;
+    margin-left: 470px;
+    font-size: 30px;
+    text-align: center;
+    border: #111;
+    border-style: ridge;
+    border-color: #111;
+    border-radius: 7px;
+}
+
+.box_direita {
+    background-color: rgb(1, 121, 177);
+    width: 500px;
+    padding: 50px;
+    margin-top: 1px;
+    margin-left: 365px;
+    font-size: 30px;
+    text-align: center;
+    border-style: ridge;
+    border-color: #111;
+    border-radius: 7px;
+}
+
+</style>
+</head>
+<body class="fundo">
+
+<ul>
+  <li><a class="ativar" href="./index.html">Menu</a></li>
+  <li><a href="#somos">Quem Somos</a></li>
+  <li><a href="#simulador">Simular Lucro</a></li>
+  <li><a href="#novida">Novidades</a></li>
+  <li><a href="#contato">Contato</a></li>
+  <li style="float:right"><a href="#registrar">Registrar-se</a></li>
+  <li style="float:right"><a href="#logar">Logar</a></li>
+
+</ul>
+
+<h1 class="H1"><b>CoolD</b></h1>
+
+<h1 class="Simulador">Simulador Financeiro</h1><br><br>
+
+<p class="box_esquerda">Quanto você ganha em viagem:<br><input type="text" id="viagem"><br><br>
+                        Quanto você perde em viagem:<br><input type="text" id="viagem"><br> <button>Ver Economia!</button> </ul>
+</p>
+
+<p class="box_direita">Você ira economizar : R$XXX.XX com nosso produto!</p>
+
+</body>
+</html>
+
+<script>
+var lucro = viagem
+
+</script>

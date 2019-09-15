@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora Financeira</title>
+</head>
+<body>
+    <h1>Saiba o quanto você gasta com funcionarios</h1>
+    <div>
+        Quantidade de Funcionarios
+        <input type="text" id="qtd_func">
+        <br><br>
+        
+        Quanto você paga para um Funcionario*
+        <input type="text" id="salario_func"><br>
+        <small>*Uma media do salario dos funcionarios</small>
+        <br><br>
+
+        <button onclick="calcular()">Calcular</button>
+
+        <br><br>
+
+        <div id="div_mensagem" style="display: none">
+            <span>Quanto você gasta com funcionarios <b id="gasto_func" style="color: red"></b> por ano</span><br><br>
+            <span>Nossa mensalidade <b style="color: green">R$ 200,00</b> por mês</span><br>
+            <span>Nossa mensalidade <b id="mens_ano"style="color: green"></b> por ano</span>
+        </div>
+    </div>
+    <div></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var gasto = (qtd_func.value * salario_func.value)*12;
+        gasto_func.innerHTML = "R$ " +gasto.toFixed(2);
+
+        mens_ano.innerHTML = "R$ "+(200 * 12);
+        div_mensagem.style.display = "block";
+      }
+</script>
