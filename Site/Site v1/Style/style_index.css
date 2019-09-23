@@ -3,7 +3,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(1, 121, 177);
+  background-color: rgb(216, 216, 216);
 }
 
 li {
@@ -16,7 +16,7 @@ li:last-child {
 
 li a {
   display: block;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -27,25 +27,62 @@ li a:hover:not(.ativar) {
 }
 
 .ativar {
-  background-color: rgb(3, 52, 85);
+  background-color: rgb(238, 43, 9);
 }
 
 .fundo {
     background-color: rgb(213, 214, 216);
 }
 
+.container {
+    position: relative;
+    margin-top: -8VH;
+  }
+
+.logotipo {
+    height: 35vh;
+    position: absolute;
+    top: 37vh;
+    left: 48vw;
+    transform: translate(-50% ,-50%);
+    border-radius: 50%;
+}
+
 .H1 {
-    font-size: 50px;
-    text-align: center;
-    color: rgb(0, 144, 211);
+    font-size: 109px;
+    position: absolute;
+    top: 46VH;
+    left: 49VW;
+    transform: translate(-50% ,-50%);
+    color: rgb(238, 43, 9);
+    font-family: 'Courier New', Courier, monospace ;
+}
+
+.P1 {
+    font-size: 30px;
+    position: absolute;
+    top: 56VH;
+    left: 49VW;
+    transform: translate(-50% ,-50%);
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.box_imagem {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 100vh;
+    left: 50vw;
+    transform: translate(-50% ,-50%);
 }
 
 .box_esquerda1 {
-    background-color: rgb(49, 167, 221);
+    background-color: rgb(221, 89, 49);
     width: 500px;
     height: 400px;
     position: absolute;
-    top: 380px;
+    top: 154vh;
     left: 360px;
     transform: translate(-50% ,-50%);
 }
@@ -91,7 +128,7 @@ li a:hover:not(.ativar) {
     width: 350px;
     padding: 150px;
     position: absolute;
-    top: 390px;
+    top: 115vh;
     left: 1000px;
     transform: translate(-50% ,-50%);
     border-radius: 50%;
@@ -104,7 +141,7 @@ li a:hover:not(.ativar) {
     font-size: 30px;
     text-align: center;
     position: absolute;
-    top: 800px;
+    top: 189vh;
     left: 350px;
     transform: translate(-50% ,-50%);
 }
@@ -124,5 +161,15 @@ li a:hover:not(.ativar) {
     position: absolute;
     top: 10px;
     left: 1300px;
+    transform: translate(-50% ,-50%);
+}
+
+.div_inicial {
+    opacity: 0.90;
+    height: 80vh;
+    width: 208VH;
+    position: absolute;
+    top: 48VH;
+    left: 48VW;
     transform: translate(-50% ,-50%);
 }
