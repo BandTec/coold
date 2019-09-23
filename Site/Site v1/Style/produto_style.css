@@ -1,0 +1,243 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(1, 121, 177);
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.ativar) {
+    background-color: #111;
+  }
+  
+  .ativar {
+    background-color: rgb(3, 52, 85);
+  }
+  
+  .fundo {
+      background-color: rgb(213, 214, 216);
+  }
+  
+  .H1 {
+      font-size: 50px;
+      text-align: center;
+      color: rgb(79, 167, 39);
+  }
+  
+  .box_esquerda1 {
+      background-color: rgb(49, 167, 221);
+      width: 500px;
+      height: 400px;
+      position: absolute;
+      top: 380px;
+      left: 360px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .paragrafo_caixa_esquerda1 {
+      font-size: 26px;
+      width: 450px;
+      position: absolute;
+      top: 70px;
+      left: 260px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .grafico_caixa_esquerda1 {
+      width: 80px;
+      padding: 05px;
+      position: absolute;
+      top: 150px;
+      left: 70px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .paragrafo_grafico_caixa_esquerda1 {
+      font-size: 24px;
+      width: 350px;
+      position: absolute;
+      top: 170px;
+      left: 290px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .imagem_tomate {           
+      width: 250px;
+      padding: 150px;
+      position: absolute;
+      top: 300px;
+      left: 680px;
+      transform: translate(-50% ,-50%);
+      border-radius: 50%;
+  }
+
+  .H1_tomate {
+      font-size: 50px;
+      position: absolute;
+      top: 400px;
+      left: 680px;
+      transform: translate(-50% ,-50%);
+      color: rgb(79, 167, 39);
+  }
+
+  .paragrafo_tomate {
+      font-size: 20px;
+      position: absolute;
+      top: 520px;
+      left: 400px;
+      transform: translate(-50% ,-50%);
+      color: rgb(211, 49, 0);
+  }
+
+  .paragrafo_tomate2 {
+      font-size: 20px;
+      position: absolute;
+      top: 520px;
+      left: 950px;
+      transform: translate(-50% ,-50%);
+      color: rgb(211, 49, 0);
+  }
+
+  .box_meio {
+      background-color: rgb(189, 190, 192);
+      width: 1798px;
+      height: 80px;
+      padding: 100px;
+      font-size: 30px;
+      text-align: center;
+      position: absolute;
+      top: 800px;
+      left: 350px;
+      transform: translate(-50% ,-50%);
+  }
+  
+  .imagem_trato {
+      width: 50px;
+      padding: 120px;
+      position: absolute;
+      top: 50px;
+      left: 800px;
+      transform: translate(-50% ,-50%);
+      border-radius: 50%;
+  }
+  
+  .paragrafo_trato {
+      font-size: 20px;
+      position: absolute;
+      top: 70px;
+      left: 800px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .paragrafo_trato2 {
+      font-size: 19px;
+      position: absolute;
+      top: 90px;
+      left: 800px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .imagem_monito {
+      width: 60px;
+      padding: 120px;
+      position: absolute;
+      top: 160px;
+      left: 800px;
+      transform: translate(-50% ,-50%);
+      border-radius: 50%;
+  }
+  
+  .paragrafo_monito {
+      font-size: 20px;
+      position: absolute;
+      top: 180px;
+      left: 800px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .paragrafo_monito2 {
+      font-size: 19px;
+      position: absolute;
+      top: 200px;
+      left: 800px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .imagem_nuvem {
+      width: 60px;
+      padding: 120px;
+      position: absolute;
+      top: 160px;
+      left: 1200px;
+      transform: translate(-50% ,-50%);
+      border-radius: 50%;
+  }
+  
+  .paragrafo_nuvem {
+      font-size: 20px;
+      position: absolute;
+      top: 180px;
+      left: 1200px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .paragrafo_nuvem2 {
+      font-size: 19px;
+      position: absolute;
+      top: 200px;
+      left: 1200px;
+      transform: translate(-50% ,-50%);
+  }
+
+  
+  .imagem_grafico {
+      width: 60px;
+      padding: 120px;
+      position: absolute;
+      top: 50px;
+      left: 1200px;
+      transform: translate(-50% ,-50%);
+      border-radius: 50%;
+  }
+  
+  .paragrafo_grafico {
+      font-size: 20px;
+      position: absolute;
+      top: 70px;
+      left: 1200px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .paragrafo_grafico2 {
+      font-size: 19px;
+      position: absolute;
+      top: 90px;
+      left: 1200px;
+      transform: translate(-50% ,-50%);
+  }
+
+  .imagem_work {
+      width: 200px;
+      padding: 120px;
+      position: absolute;
+      top: 130px;
+      left: 1700px;
+      transform: translate(-50% ,-50%);
+      border-radius: 50%;
+  }
