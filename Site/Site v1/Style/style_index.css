@@ -59,13 +59,13 @@ li a:hover:not(.ativar) {
 }
 
 .H1 {
+   font-family: 'Montserrat', sans-serif;
     font-size: 109px;
     position: absolute;
     top: 46VH;
     left: 49VW;
     transform: translate(-50% ,-50%);
     color: rgb(238, 43, 9);
-    font-family: 'Courier New', Courier, monospace ;
 }
 
 .P1 {
@@ -75,7 +75,17 @@ li a:hover:not(.ativar) {
     left: 49VW;
     transform: translate(-50% ,-50%);
     color: rgb(255, 255, 255);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace ;
+}
+.conteudo{
+  font-family:'Montserrat',sans-serif;
+  font-size: 30px;
+  white-space: normal;
+  position: relative;
+    top: 136VH;
+    left: 50VW;
+    transform: translate(-50% ,-50%);
+
 }
 
 .container2 {
