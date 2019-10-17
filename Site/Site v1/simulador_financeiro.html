@@ -101,16 +101,37 @@ li a:hover:not(.ativar) {
 
 <h1 class="Simulador">Simulador Financeiro</h1><br><br>
 
-<p class="box_esquerda">Quanto você ganha em viagem:<br><input type="text" id="viagem"><br><br>
-                        Quanto você perde em viagem:<br><input type="text" id="viagem"><br> <button>Ver Economia!</button> </ul>
+<p class="box_esquerda">Quantas caixas pretende transportar por caminhão?:<br><input type="text" id="valor_transporte"><br>
+                        Qual é o preço por quilo dos seus tomates?:<br><input type="text" id="valor_preço"><br> 
+                        Qual é o tempo estimado da viagem em horas?:<br><input type="text" id="valor_tempo"><br>
+                        Qual é a distância da viagem em Kilometros?: <input type="text" id="valor_qntd_caminhao"><br>
+                        Quantos caminhões entrarão em circulação?: <input type="text" id="valor_distancia"><br>
+
+                        <button onclick="economia()">Ver Economia!</button> </ul>
 </p>
 
-<p class="box_direita">Você ira economizar : R$XXX.XX com nosso produto!</p>
+<p class="box_direita" id="msg">Você irá economizar: <span id="valor_economizado">XXX.XX</span> com nosso produto!</p>
 
 </body>
 </html>
 
 <script>
-var lucro = viagem
+  function economia() {
+    var transporte = valor_transporte.value;
+    var preço = valor_preço.value;
+    var tempo = valor_tempo.value;
+    var caminhao = valor_qntd_caminhao.value;
+    var distancia = valor_distancia.value;
+    var gastos_mensais = 200 * caminhao;
+    var perdas = 25 * preço * transporte * caminhao;
+    var economia = gastos_mensais - perdas;
+
+    if(distancia<300 || tempo<4){
+      msg.innerHTML = 'Você não irá economizar com nosso serviço.'
+    }else{
+      msg.innerHTML = `Você irá economizar: `;
+      valor_economizado.innerHTML = `R$${economia} com nosso produto!`;
+    }
+  }
 
 </script>
