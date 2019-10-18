@@ -12,11 +12,11 @@ void loop() {
     DHT.read11 (A1); // chama método de leitura da classe dht,
                      // com o pino de transmissão de dados ligado no pino A1
                      
-    Serial.print(DHT.humidity); // Exibe na serial o valor de umidade
-    Serial.println(" %");
+    Serial.println(DHT.humidity); // Exibe na serial o valor de umidade
+    //Serial.println(" %");
     
-    Serial.print(DHT.temperature); // Exibe na serial o valor da temperatura
-    Serial.println(" Celsius");
+    Serial.println(DHT.temperature); // Exibe na serial o valor da temperatura
+    //Serial.println(" Celsius");
 
     timer = millis(); // Atualiza a referência
   }
