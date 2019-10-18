@@ -102,10 +102,10 @@ li a:hover:not(.ativar) {
 <h1 class="Simulador">Simulador Financeiro</h1><br><br>
 
 <p class="box_esquerda">Quantas caixas pretende transportar por caminhão?:<br><input type="text" id="valor_transporte"><br>
-                        Qual é o preço por quilo dos seus tomates?:<br><input type="text" id="valor_preço"><br> 
+                        Qual é o preço por quilo dos seus tomates?:<br><input type="text" id="valor_preco"><br> 
                         Qual é o tempo estimado da viagem em horas?:<br><input type="text" id="valor_tempo"><br>
-                        Qual é a distância da viagem em Kilometros?: <input type="text" id="valor_qntd_caminhao"><br>
-                        Quantos caminhões entrarão em circulação?: <input type="text" id="valor_distancia"><br>
+                        Qual é a distância da viagem em Kilometros?: <input type="text" id="valor_distancia"><br>
+                        Quantos caminhões entrarão em circulação?: <input type="text" id="valor_qntd_caminhao"><br>
 
                         <button onclick="economia()">Ver Economia!</button> </ul>
 </p>
@@ -117,20 +117,21 @@ li a:hover:not(.ativar) {
 
 <script>
   function economia() {
-    var transporte = valor_transporte.value;
-    var preço = valor_preço.value;
-    var tempo = valor_tempo.value;
-    var caminhao = valor_qntd_caminhao.value;
-    var distancia = valor_distancia.value;
-    var gastos_mensais = 200 * caminhao;
-    var perdas = 25 * preço * transporte * caminhao;
-    var economia = gastos_mensais - perdas;
+    var qtd_caixas = Number(valor_transporte.value);
+    var preco = Number(valor_preco.value);
+    var tempo = Number(valor_tempo.value);
+    var caminhao = Number(valor_qntd_caminhao.value);
+    var distancia = Number(valor_distancia.value);
+    var gastos_mensais = Number(200) * caminhao;
+    var perdas = 25 * preco * qtd_caixas * caminhao;
+    var economia = Number(perdas) - Number(gastos_mensais) ;
 
-    if(distancia<300 || tempo<4){
+    if(distancia < 300 || tempo < 4){
       msg.innerHTML = 'Você não irá economizar com nosso serviço.'
-    }else{
-      msg.innerHTML = `Você irá economizar: `;
-      valor_economizado.innerHTML = `R$${economia} com nosso produto!`;
+    } 
+    if(distancia > 300 || tempo > 4) {
+      msg.innerHTML = `Você irá economizar R$${economia} com nosso produto! `;
+      //valor_economizado.innerHTML = `R$${economia} com nosso produto!`;
     }
   }
 
