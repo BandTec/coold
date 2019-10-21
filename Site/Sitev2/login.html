@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="CSS/login.css">
+</head>
+<body>
+    <div class="div_topo"></div>
+    <div class="container">
+        <div class="linhas_lateral lateral1"></div>
+        <div class="linhas_lateral lateral2"></div>
+        <div class="linha_topo"></div>
+        <button class="botao_voltar">voltar</button>
+
+        <b class="h1">Una-se a Coold!</b> <br>
+        <br>
+        <br><br><br><br><br><br>
+            <b>Email</b>
+            <input id="email" type="text" placeholder="Coloque o Email">
+        
+            <b>Senha</b>
+            <input id="senha" type="password" placeholder="Coloque a Senha"> 
+            <br>
+            <br>
+            <br>
+
+            <button class="botao" onclick="logar()">Logar</button>
+
+            <div class="linha_baixo"></div>
+            <div class="linhas_lateral lateral3"></div>
+            <div class="linhas_lateral lateral4"></div>
+
+    <form method="get" action="index.html">
+        <button class="botao_voltar2">voltar</button>
+    </form>
+    </div>
+    <b class="h1_coold">CoolD</b>
+    
+</body>
+</html>
+<script>
+    var valor_login = email.value;
+    var valor_senha = senha.value;
+
+    function logar() {
+        if (valor_login=='ana' && valor_senha=='anaa') {
+            alert('Usuário autenticado');
+        } else {
+            alert('Falha na autenticação');
+        }
+    }
+</script>

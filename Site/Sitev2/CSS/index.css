@@ -1,0 +1,239 @@
+body {
+    background-image: linear-gradient(rgb(197, 197, 197), rgb(141, 141, 141));
+}
+
+.div_topo {
+    background-image: linear-gradient(rgb(179, 179, 179), rgb(197, 197, 197));
+    width: 1349px;
+    height: 1500px;
+    margin: -8px -8px;
+  }
+
+.coold {
+    font-size: 50px;
+    position: relative;
+    color: rgb(255, 32, 32);
+    top: 140px;
+    left: 600px;
+}
+
+.botao {
+    border: none;
+    color: rgb(255, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+.logar {
+    background-color: #f4433600;  
+    position: absolute;
+    top: 100px;
+    left: 1150px;
+}
+
+.registrar{
+    background-color: rgb(219, 219, 219);
+    position: absolute;
+    top: 100px;
+    left: 950px;
+}
+
+.coold_txt {
+    font-size: 55px;
+    position: absolute;
+    color: rgb(219, 219, 219);
+    top: 355px;
+    left: 265px;
+}
+
+.div_meio {
+    background-color: red;
+    width: 1357px;
+    height: 200px;
+    margin: -50px -8px;
+  }
+
+.img_meio {
+    height: 300px;
+    position: relative;
+    top: -40px;
+    left: 750px;
+}
+
+.div_meio2 {
+    background-color: rgb(219, 219, 219);
+    width: 1057px;
+    height: 295px;
+    margin: 70px 135px;
+    border-radius: 30px;
+}
+
+.txt_meio2 {
+    font-size: 50px;
+    color: rgb(22, 22, 22);
+    position: absolute;
+    top: 580px;
+    left: 170px;
+}
+
+.botao_meio2 {
+    font-size: 26px;
+    color: rgb(219, 219, 219);
+    background-color: red;  
+    position: absolute;
+    top: 730px;
+    left: 150px;
+}
+
+.botao2_meio2 {
+    font-size: 26px;
+    color: rgb(219, 219, 219);
+    background-color: red;  
+    position: absolute;
+    top: 730px;
+    left: 430px;
+}
+
+.imgs_tomate {
+    height: 300px;
+    position: relative;
+    top: 180px;
+    left: 0px;
+}
+
+.img2_tomate {
+    height: 300px;
+    position: relative;
+    top: 200px;
+    left: 750px;
+}
+
+.box_projeto {
+    background-color: rgb(219, 219, 219);;
+    width: 550px;
+    height: 320px;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    border-radius: 20px;
+}
+
+.box2_projeto {
+    background-color: rgb(219, 219, 219);;
+    width: 550px;
+    height: 320px;
+    position: relative;
+    top: -280px;
+    left: 750px;
+    border-radius: 20px;
+}
+
+.monitoramento {
+    width: 550px;
+    height: 400px;
+    position: relative;
+    top: -150px;
+    left: 750px;
+}
+
+.caminhao {
+    height: 180px;
+    position: relative;
+    top: 10px;
+    left: 100px;
+}
+
+.fundo_caminhao {
+    height: 250px;
+    width: 551px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0.9;
+    border-radius: 20px;
+}
+
+.caminhao_txt {
+    color: rgb(0, 0, 0);
+    font-size: 55px;
+    position: relative;
+    top: 120px;
+    left: -150px;
+}
+
+.fundo_tempo {
+    height: 250px;
+    width: 550px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0.9;
+    border-radius: 20px;
+}
+
+.tempo_txt {
+    color: rgb(0, 0, 0);
+    font-size: 55px;
+    position: relative;
+    top: 250px;
+    left: 120px;
+}
+
+.txt_fim {
+    color: rgb(0, 0, 0);
+    font-size: 73px;
+    position: relative;
+    top: -570px;
+    left: 370px;
+}
+
+.txt2_fim {
+    font-size: 38px;
+    position: absolute;
+    top: 1330px;
+    left: 20px;
+}
+
+.linha_fim {
+    width: 300px;
+    border: 15px solid red;
+    position: relative;
+    top: -500px;
+    left: -300px;
+}
+
+.linha_fim2 {
+    width: 3px;
+    border: 15px solid red;
+    position: relative;
+    top: -500px;
+    left: 1315px;
+}
+
+.linha_fim3 {
+    width: 1280px;
+    border: 1px solid red;
+    position: absolute;
+    top: 900px;
+    left: 30px;
+}
+
+.linha_fim5 {
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+    top: 800px;
+    left: 30px;
+}
+
+.linha_fim6 {
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+    top: 800px;
+    left: 1312px;
+}
