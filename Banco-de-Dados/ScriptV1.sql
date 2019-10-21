@@ -1,11 +1,18 @@
 /* Criando a tabela Cliente com os campos conforme listados no backlog */
 create table Cliente (
 idCliente int primary key auto_increment,
-nome varchar(255),
+nome varchar(50),
 telefone varchar(14),
-senha varchar(255),
+senha varchar(16),
 email varchar(100),
 CNPJ varchar(18)
+);
+
+/* Criando a tabela Sensor*/
+create table Sensor (
+idSensor int primary key auto_increment,
+temperatura int,
+umidade int
 );
 
 /* Criando a tabela Motorista */
@@ -25,7 +32,7 @@ foreign key (fkSensor) references Sensor(idSensor)
 /* Criando a tabela Motorista */
 create table Motorista (
 idMotorista int primary key auto_increment,
-nome varchar(255),
+nome varchar(50),
 dataNasc date,
 endereco varchar(255),
 sexo char(1),
@@ -56,13 +63,6 @@ dataValidade date,
 /* Criando a coluna fkMotorista sendo uma chave estrangeira que referencia a tabela Motorista e sua chave primária(idMotorista) */
 fkMotorista int,
 foreign key (fkMotorista) references Motorista(idMotorista)
-);
-
-/* Criando a tabela Sensor*/
-create table Sensor (
-idSensor int primary key auto_increment,
-temperatura int,
-umidade int
 );
 
 /* Criando a tabela Eventos*/
