@@ -24,10 +24,10 @@
             <input id="senha" type="password" placeholder="Coloque a Senha"> 
 
             <b>Confirmar Senha</b>
-            <input id="senha" type="password" placeholder="Confirmar a Senha"> 
+            <input id="senha2" type="password" placeholder="Confirmar a Senha"> 
 
             <b>Celular</b>
-            <input id="senha" type="password" placeholder="Com DDD"> 
+            <input id="cel" type="number" placeholder="Com DDD"> 
             <br>
             <br>
             <br>
@@ -51,3 +51,13 @@
     <b class="h1_coold">CoolD</b>
 </body>
 </html>
+<script>
+
+    function cadastro() {
+        if (email.value.endsWith('@bandtec.com.br') && senha.value.length >= 4 &&  email.value != '@bandtec.com.br') {
+            alert('Cadastro válido!');
+        } else {
+            alert('Valores inválidos!');
+        }
+    }
+    </script>
