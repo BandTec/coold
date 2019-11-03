@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.fundo{
+    float: left;
+    width: 100vw;
+    height: 100vh;
+    background-color: black
+}
+
+.nav{
+    float: left;
+    height: 70px;
+    width: 100vw;
+    background-color: white;
+    position: absolute;
+    top: 0;
+}
+
+.logo1 {
+    float: left;
+    height: 80%;
+    width: 5%;
+    margin-left: 2%;
+    margin-top: 5px;
+    background: url("./logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.logo2 {
+    float: left;
+    height: 80%;
+    width: 20%;
+    margin-left: 0%;
+    margin-top: 5px;
+    background: url("./logo2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.navegar {
+    float: right;
+    height: 80%;
+    width: 35%;
+    margin-right: 2%;
+    margin-top: 5px;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 8px;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  .banner {
+    
+  }
+    
+    
