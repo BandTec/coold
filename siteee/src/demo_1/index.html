@@ -1,468 +1,529 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Label - Premium Responsive Bootstrap 4 Admin & Dashboard Template</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
-    <!-- endinject -->
-    <!-- vendor css for this page -->
-    <!-- End vendor css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../assets/css/shared/style.css">
-    <!-- endinject -->
-    <!-- Layout style -->
-    <link rel="stylesheet" href="../assets/css/demo_1/style.css">
-    <!-- Layout style -->
-    <link rel="shortcut icon" href="../asssets/images/favicon.ico" />
 
-  <script src="../Exemplos Chart JS e Google Charts-20191106/chartjs/chartjs.min.js"></script>
-	<script src="../Exemplos Chart JS e Google Charts-20191106/chartjs/utils.js"></script>
-	<style>
-	canvas{
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Label - Premium Responsive Bootstrap 4 Admin & Dashboard Template</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+  <!-- endinject -->
+  <!-- vendor css for this page -->
+  <!-- End vendor css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../assets/css/shared/style.css">
+  <!-- endinject -->
+  <!-- Layout style -->
+  <link rel="stylesheet" href="../assets/css/demo_1/style.css">
+  <!-- Layout style -->
+  <link rel="shortcut icon" href="../asssets/images/favicon.ico" />
+
+  <script src="../assets/js/charts/chartjs.min.js"></script>
+  <script src="../assets/js/charts/utils.js"></script>
+  <style>
+    canvas{
 		-moz-user-select: none;
 		-webkit-user-select: none;
 		-ms-user-select: none;
-	}
+  }
 </style>
-    <script type="text/javascript" src="../Exemplos Chart JS e Google Charts-20191106/googlecharts/loader.js"></script>
-    <script type="text/javascript">
-     google.charts.load('current', {'packages':['gauge']});
-      google.charts.setOnLoadCallback(drawChart);
+</head>
 
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Temperatura', 15]
-        ]);
-
-        var options = {
-          width: 200, height: 260,
-          redFrom: 40, redTo: 60,
-          greenFrom: 20, greenTo: 40,
-          yellowFrom:40, yellowTo: 60,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('div_grafico'));
-
-        chart.draw(data, options);
-
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 2000);
-      }
-</script>
-  </head>
-  <body class="header-fixed">
-    <!-- partial:partials/_header.html -->
-    <nav class="t-header">
-      <div class="t-header-brand-wrapper">
-        <a href="index.html">
-          <img class="logo" src="../assets/images/logo2.png" height="40px">
-          <img class="logo-mini" src="../assets/images/logo_mini.svg" alt="">
-        </a>
-      </div>
-      <div class="t-header-content-wrapper">
-        <div class="t-header-content">
-          <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
-            <i class="mdi mdi-menu"></i>
-          </button>
-          <form action="#" class="t-header-search-box">
-            <div class="input-group">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" autocomplete="off">
-              <button class="btn btn-primary" type="submit"><i class="mdi mdi-arrow-right-thick"></i></button>
+<body class="header-fixed">
+  <!-- partial:partials/_header.html -->
+  <nav class="t-header">
+    <div class="t-header-brand-wrapper">
+      <a href="index.html">
+        <img class="logo" src="../assets/images/logo2.png" height="40px">
+        <img class="logo-mini" src="../assets/images/logo_mini.svg" alt="">
+      </a>
+    </div>
+    <div class="t-header-content-wrapper">
+      <div class="t-header-content">
+        <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+          <i class="mdi mdi-menu"></i>
+        </button>
+        <form action="#" class="t-header-search-box">
+          <div class="input-group">
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search" autocomplete="off">
+            <button class="btn btn-primary" type="submit"><i class="mdi mdi-arrow-right-thick"></i></button>
+          </div>
+        </form>
+        <ul class="nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="notificationDropdown" data-toggle="dropdown" aria-expanded="false">
+              <i class="mdi mdi-bell-outline mdi-1x"></i>
+            </a>
+            <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="notificationDropdown">
+              <div class="dropdown-header">
+                <h6 class="dropdown-title">Notifications</h6>
+                <p class="dropdown-title-text">You have 4 unread notification</p>
+              </div>
+              <div class="dropdown-body">
+                <div class="dropdown-list">
+                  <div class="icon-wrapper rounded-circle bg-inverse-primary text-primary">
+                    <i class="mdi mdi-alert"></i>
+                  </div>
+                  <div class="content-wrapper">
+                    <small class="name">Storage Full</small>
+                    <small class="content-text">Server storage almost full</small>
+                  </div>
+                </div>
+                <div class="dropdown-list">
+                  <div class="icon-wrapper rounded-circle bg-inverse-success text-success">
+                    <i class="mdi mdi-cloud-upload"></i>
+                  </div>
+                  <div class="content-wrapper">
+                    <small class="name">Upload Completed</small>
+                    <small class="content-text">3 Files uploded successfully</small>
+                  </div>
+                </div>
+                <div class="dropdown-list">
+                  <div class="icon-wrapper rounded-circle bg-inverse-warning text-warning">
+                    <i class="mdi mdi-security"></i>
+                  </div>
+                  <div class="content-wrapper">
+                    <small class="name">Authentication Required</small>
+                    <small class="content-text">Please verify your password to continue using cloud services</small>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-footer">
+                <a href="#">View All</a>
+              </div>
             </div>
-          </form>
-          <ul class="nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" id="notificationDropdown" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-bell-outline mdi-1x"></i>
-              </a>
-              <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="notificationDropdown">
-                <div class="dropdown-header">
-                  <h6 class="dropdown-title">Notifications</h6>
-                  <p class="dropdown-title-text">You have 4 unread notification</p>
-                </div>
-                <div class="dropdown-body">
-                  <div class="dropdown-list">
-                    <div class="icon-wrapper rounded-circle bg-inverse-primary text-primary">
-                      <i class="mdi mdi-alert"></i>
-                    </div>
-                    <div class="content-wrapper">
-                      <small class="name">Storage Full</small>
-                      <small class="content-text">Server storage almost full</small>
-                    </div>
-                  </div>
-                  <div class="dropdown-list">
-                    <div class="icon-wrapper rounded-circle bg-inverse-success text-success">
-                      <i class="mdi mdi-cloud-upload"></i>
-                    </div>
-                    <div class="content-wrapper">
-                      <small class="name">Upload Completed</small>
-                      <small class="content-text">3 Files uploded successfully</small>
-                    </div>
-                  </div>
-                  <div class="dropdown-list">
-                    <div class="icon-wrapper rounded-circle bg-inverse-warning text-warning">
-                      <i class="mdi mdi-security"></i>
-                    </div>
-                    <div class="content-wrapper">
-                      <small class="name">Authentication Required</small>
-                      <small class="content-text">Please verify your password to continue using cloud services</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="dropdown-footer">
-                  <a href="#">View All</a>
-                </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="appsDropdown" data-toggle="dropdown" aria-expanded="false">
+              <i class="mdi mdi-apps mdi-1x"></i>
+            </a>
+            <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="appsDropdown">
+              <div class="dropdown-header">
+                <h6 class="dropdown-title">Apps</h6>
+                <p class="dropdown-title-text mt-2">Authentication required for 3 apps</p>
               </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" id="appsDropdown" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-apps mdi-1x"></i>
-              </a>
-              <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="appsDropdown">
-                <div class="dropdown-header">
-                  <h6 class="dropdown-title">Apps</h6>
-                  <p class="dropdown-title-text mt-2">Authentication required for 3 apps</p>
-                </div>
-                <div class="dropdown-body border-top pt-0">
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-jira mdi-2x"></i>
-                    <span class="grid-tittle">Jira</span>
-                  </a>
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-trello mdi-2x"></i>
-                    <span class="grid-tittle">Trello</span>
-                  </a>
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-artstation mdi-2x"></i>
-                    <span class="grid-tittle">Artstation</span>
-                  </a>
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-bitbucket mdi-2x"></i>
-                    <span class="grid-tittle">Bitbucket</span>
-                  </a>
-                </div>
-                <div class="dropdown-footer">
-                  <a href="#">View All</a>
-                </div>
+              <div class="dropdown-body border-top pt-0">
+                <a class="dropdown-grid">
+                  <i class="grid-icon mdi mdi-jira mdi-2x"></i>
+                  <span class="grid-tittle">Jira</span>
+                </a>
+                <a class="dropdown-grid">
+                  <i class="grid-icon mdi mdi-trello mdi-2x"></i>
+                  <span class="grid-tittle">Trello</span>
+                </a>
+                <a class="dropdown-grid">
+                  <i class="grid-icon mdi mdi-artstation mdi-2x"></i>
+                  <span class="grid-tittle">Artstation</span>
+                </a>
+                <a class="dropdown-grid">
+                  <i class="grid-icon mdi mdi-bitbucket mdi-2x"></i>
+                  <span class="grid-tittle">Bitbucket</span>
+                </a>
               </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="page-body">
-      <!-- partial:partials/_sidebar.html -->
-      <div class="sidebar">
-        <div class="user-profile">
-          <div class="display-avatar animated-avatar">
-            <img class="profile-img img-lg rounded-circle" src="../assets/images/profile/male/will.jpg" alt="profile image">
-          </div>
-          <div class="info-wrapper">
-            <p class="user-name"> Will Smith</p>
-            <h6 class="display-income">Tometo Top</h6>
-          </div>
-        </div>
-        <ul class="navigation-menu">
-          <li class="nav-category-divider">MENU</li>
-          <li>
-            <a href="index.html">
-              <span class="link-title">Menu Administrativo</span>
-              <i class="mdi mdi-gauge link-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#sample-pages" data-toggle="collapse" aria-expanded="false">
-              <span class="link-title">Sample Pages</span>
-              <i class="mdi mdi-flask link-icon"></i>
-            </a>
-            <ul class="collapse navigation-submenu" id="sample-pages">
-              <li>
-                <a href="pages/sample-pages/login_1.html" target="_blank">Login</a>
-              </li>
-              <li>
-                <a href="pages/sample-pages/error_2.html" target="_blank">Error</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
-              <span class="link-title">UI Elements</span>
-              <i class="mdi mdi-bullseye link-icon"></i>
-            </a>
-            <ul class="collapse navigation-submenu" id="ui-elements">
-              <li>
-                <a href="pages/ui-components/buttons.html">Buttons</a>
-              </li>
-              <li>
-                <a href="pages/ui-components/tables.html">Tables</a>
-              </li>
-              <li>
-                <a href="pages/ui-components/typography.html">Typography</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="pages/forms/form-elements.html">
-              <span class="link-title">Forms</span>
-              <i class="mdi mdi-clipboard-outline link-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="pages/charts/chartjs.html">
-              <span class="link-title">Charts</span>
-              <i class="mdi mdi-chart-donut link-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="pages/icons/material-icons.html">
-              <span class="link-title">Icons</span>
-              <i class="mdi mdi-flower-tulip-outline link-icon"></i>
-            </a>
-          </li>
-          <li class="nav-category-divider">DOCS</li>
-          <li>
-            <a href="../docs/docs.html">
-              <span class="link-title">Documentation</span>
-              <i class="mdi mdi-asterisk link-icon"></i>
-            </a>
+              <div class="dropdown-footer">
+                <a href="#">View All</a>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
-      <!-- partial -->
-      <div class="page-content-wrapper">
-        <div class="page-content-wrapper-inner">
-          <div class="content-viewport">
-            <div class="row">
-              <div class="col-12 py-5">
-                <h4>Menu ADM</h4>
-                <p class="text-gray">Bem vindo a bordo, Will Smith</p>
-              </div>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="page-body">
+    <!-- partial:partials/_sidebar.html -->
+    <div class="sidebar">
+      <div class="user-profile">
+        <div class="display-avatar animated-avatar">
+          <img class="profile-img img-lg rounded-circle" src="../assets/images/profile/male/will.jpg" alt="profile image">
+        </div>
+        <div class="info-wrapper">
+          <p class="user-name"> Will Smith</p>
+          <h6 class="display-income">Tometo Top</h6>
+        </div>
+      </div>
+      <ul class="navigation-menu">
+        <li class="nav-category-divider">MENU</li>
+        <li>
+          <a href="index.html">
+            <span class="link-title">Menu Administrativo</span>
+            <i class="mdi mdi-gauge link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#sample-pages" data-toggle="collapse" aria-expanded="false">
+            <span class="link-title">Sample Pages</span>
+            <i class="mdi mdi-flask link-icon"></i>
+          </a>
+          <ul class="collapse navigation-submenu" id="sample-pages">
+            <li>
+              <a href="pages/sample-pages/login_1.html" target="_blank">Login</a>
+            </li>
+            <li>
+              <a href="pages/sample-pages/error_2.html" target="_blank">Error</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
+            <span class="link-title">UI Elements</span>
+            <i class="mdi mdi-bullseye link-icon"></i>
+          </a>
+          <ul class="collapse navigation-submenu" id="ui-elements">
+            <li>
+              <a href="pages/ui-components/buttons.html">Buttons</a>
+            </li>
+            <li>
+              <a href="pages/ui-components/tables.html">Tables</a>
+            </li>
+            <li>
+              <a href="pages/ui-components/typography.html">Typography</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="pages/forms/form-elements.html">
+            <span class="link-title">Forms</span>
+            <i class="mdi mdi-clipboard-outline link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="pages/charts/chartjs.html">
+            <span class="link-title">Charts</span>
+            <i class="mdi mdi-chart-donut link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="pages/icons/material-icons.html">
+            <span class="link-title">Icons</span>
+            <i class="mdi mdi-flower-tulip-outline link-icon"></i>
+          </a>
+        </li>
+        <li class="nav-category-divider">DOCS</li>
+        <li>
+          <a href="../docs/docs.html">
+            <span class="link-title">Documentation</span>
+            <i class="mdi mdi-asterisk link-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- partial -->
+    <div class="page-content-wrapper">
+      <div class="page-content-wrapper-inner">
+        <div class="content-viewport">
+          <div class="row">
+            <div class="col-12 py-5">
+              <h4>Menu ADM</h4>
+              <p class="text-gray">Bem vindo a bordo, Will Smith</p>
             </div>
-            <div class="row">
-              <div class="col-lg-4 col-md-6 equel-grid">
-                <div class="grid">
-                  <div class="grid-body d-flex flex-column h-100">
-                    <div class="wrapper">
-                      <div class="d-flex justify-content-between">
-                        <div class="split-header">
-                          <p class="card-title">Temperatura</p>
-                        </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body d-flex flex-column h-100">
+                  <div class="wrapper">
+                    <div class="d-flex justify-content-between">
+                      <div class="split-header">
+                        <p class="card-title">Temperatura</p>
                       </div>
                     </div>
-                    <div class="grafico" id="div_grafico"></div>
                   </div>
+                  <div class="grafico" id="div_grafico"> COLOCAR TERMOMETRO AQUI</div>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6 equel-grid">
-                <div class="grid">
-                  <div class="grid-body">
-                    <p class="card-title">Umidade</p>
-                    <div id="radial-chart"></div>
-                  </div>
+            </div>
+            <div class="col-lg-4 col-md-6 equel-grid">
+              <div class="grid">
+                <div class="grid-body">
+                  <p class="card-title">Umidade</p>
+                  <div id="radial-chart2">COLOCAR GOTA AQUI</div>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6 equel-grid">
-                <div class="grid table-responsive">
-                  <table class="table table-stretched">
-                    <thead>
-                      <tr>
-                        <th>Caminhão</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Caminhão 1</p>
-                          <small class="text-gray">AKR-4747</small>
-                        </td>
-                        <td class="text-danger font-weight-medium">
-                          <div class="badge badge-success">Bom</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Caminhão 2</p>
-                          <small class="text-gray">KRA-7474</small>
-                        </td>
-                        <td class="text-danger font-weight-medium">
-                          <div class="badge badge-danger">Ruim</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Caminhão 3</p>
-                          <small class="text-gray">LOP-8382</small>
-                        </td>
-                        <td class="text-danger font-weight-medium">
-                          <div class="badge badge-success">Bom</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Caminhão 4</p>
-                          <small class="text-gray">BUM-6542</small>
-                        </td>
-                        <td class="text-success font-weight-medium">
-                          <div class="badge badge-success">Bom</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Caminhão 5</p>
-                          <small class="text-gray">KOF-9798</small>
-                        </td>
-                        <td class="text-success font-weight-medium">
-                          <div class="badge badge-success">Bom</div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 equel-grid">
+              <div class="grid table-responsive">
+                <table class="table table-stretched">
+                  <thead>
+                    <tr>
+                      <th>Caminhão</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p class="mb-n1 font-weight-medium">Caminhão 1</p>
+                        <small class="text-gray">AKR-4747</small>
+                      </td>
+                      <td class="text-danger font-weight-medium">
+                        <div class="badge badge-success">Bom</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="mb-n1 font-weight-medium">Caminhão 2</p>
+                        <small class="text-gray">KRA-7474</small>
+                      </td>
+                      <td class="text-danger font-weight-medium">
+                        <div class="badge badge-danger">Ruim</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="mb-n1 font-weight-medium">Caminhão 3</p>
+                        <small class="text-gray">LOP-8382</small>
+                      </td>
+                      <td class="text-danger font-weight-medium">
+                        <div class="badge badge-success">Bom</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="mb-n1 font-weight-medium">Caminhão 4</p>
+                        <small class="text-gray">BUM-6542</small>
+                      </td>
+                      <td class="text-success font-weight-medium">
+                        <div class="badge badge-success">Bom</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="mb-n1 font-weight-medium">Caminhão 5</p>
+                        <small class="text-gray">KOF-9798</small>
+                      </td>
+                      <td class="text-success font-weight-medium">
+                        <div class="badge badge-success">Bom</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
-<h2>Gráfico de Temperatura nas ultimas 4 horas</h2>
-  <div style="width:100%; height: 4%;">
-		<canvas id="canvas"></canvas>
-  </div>
-  <script>
-		var momentos = ['14:05:21', '14:05:21', '14:05:30', '14:05:42', '14:05:52', '14:06:01', '14:06:12'];
-		var configuracao = {
-			type: 'line',
-			data: {
-				labels: ['14:05:21', '14:05:21', '14:05:30', '14:05:42', '14:05:52', '14:06:01', '14:06:12'],
-				datasets: [{
-					label: 'Temperatura em Cº',
-					backgroundColor: window.chartColors.blue,
-					borderColor: window.chartColors.blue,
-					data: [
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor()
-					],
-					fill: false,
-				}]
-			},
-			options: {
-				responsive: true,
-				title: {
-					display: true,
-					text: 'Temperatura'
-				},
-				tooltips: {
-					mode: 'index',
-					intersect: false,
-				},
-				hover: {
-					mode: 'nearest',
-					intersect: true
-				},
-				scales: {
-					xAxes: [{
-						display: true,
-						scaleLabel: {
-							display: true,
-							labelString: 'Momento'
-						}
-					}],
-					yAxes: [{
-						display: true,
-						scaleLabel: {
-							display: true,
-							labelString: 'Valor'
-						}
-					}]
-				}
-			}
-		};
-
-		window.onload = function() {
-            var ctx = document.getElementById('canvas').getContext('2d');
-            window.myLine = new Chart(ctx, configuracao);    
-            atualizarGrafico();
-		};
-
-		function atualizarGrafico() {
-			configuracao.data.datasets.forEach(function(dataset) {
-				dataset.data = dataset.data.map(function() {
-					return randomScalingFactor();
-				});
-
-			});
-
-            window.myLine.update();
-            
-            // chamar a própria função após 3 segundos (3000 ms)
-            setTimeout(() => {
-               atualizarGrafico(); 
-            }, 3000);
-        };
-		
-  </script>
-  
-  <script type="text/javascript">
-    // <![CDATA[
-    var ttChatLoaderS = document.createElement('script');
-    document.tomticketChatLoaderScriptVersion = 2;
-    ttChatLoaderS.src = 'https://supervisionbandtec.tomticket.com/scripts-chat/chat.min.js'
-    + '?id=EP36655'
-    + '&account=2345920P07112019054404'
-    + '&autoOpen=0'
-    + '&hideWhenOffline=0'
-    + '&d=supervisionbandtec'
-    + '&ts=' + new Date().getTime()
-    + '&ref=' + encodeURIComponent(document.URL);
-    document.body.appendChild(ttChatLoaderS);
-    //]]>
-    </script>
-    
-        <!-- content viewport ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="row">
-            <div class="col-sm-6 text-center text-sm-right order-sm-1">
-              <ul class="text-gray">
-                <li><a href="#">Termos de Uso</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
-              <small class="text-muted d-block">Copyright © 2019 <a href="http://www.uxcandy.co" target="_blank">Super Vision</a>. All rights reserved</small>
-              <small class="text-gray mt-2">Handcrafted With <i class="mdi mdi-heart text-danger"></i></small>
-            </div>
-          </div>
-        </footer>
-        <!-- partial -->
       </div>
-      <!-- page content ends -->
+
+      <h2>Gráfico de Temperatura nas ultimas 4 horas</h2>
+      <div style="width:100%; height: 4%;">
+        <canvas id="canvas"></canvas>
+      </div>
+
+
+      <script>
+        var momentos = ['14:05:21', '14:05:21', '14:05:30', '14:05:42', '14:05:52', '14:06:01', '14:06:12'];
+        var configuracao = {
+          type: 'line',
+          data: {
+            labels: ['14:05:21', '14:05:21', '14:05:30', '14:05:42', '14:05:52', '14:06:01', '14:06:12'],
+            datasets: [{
+              label: 'Temperatura em Cº',
+              backgroundColor: window.chartColors.blue,
+              borderColor: window.chartColors.blue,
+              data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor()
+              ],
+              fill: false,
+            }]
+          },
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Temperatura'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: true
+            },
+            scales: {
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Momento'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Valor'
+                }
+              }]
+            }
+          }
+        };
+
+        window.onload = function () {
+          var ctx = document.getElementById('canvas').getContext('2d');
+          window.myLine1 = new Chart(ctx, configuracao);
+          atualizaGrafico();
+
+          var ctx2 = document.getElementById('canvas2').getContext('2d');
+          window.myLine2 = new Chart(ctx2, configuracao2);
+          atualizarGrafico();
+        };
+
+        function atualizaGrafico() {
+          configuracao.data.datasets.forEach(function (dataset) {
+            dataset.data = dataset.data.map(function () {
+              return randomScalingFactor();
+            });
+
+          });
+
+          window.myLine1.update();
+
+          // chamar a própria função após 3 segundos (3000 ms)
+          setTimeout(() => {
+            atualizaGrafico();
+          }, 3000);
+        };
+
+      </script>
+
+      <h2>Gráfico de Umidade nas ultimas 4 horas</h2>
+      <div style="width:100%;">
+        <canvas id="canvas2"></canvas>
+      </div>
+
+
+      <script>
+        var momentos2 = ['14:05:21', '14:05:21', '14:05:30', '14:05:42', '14:05:52', '14:06:01', '14:06:12'];
+        var configuracao2 = {
+          type: 'line',
+          data: {
+            labels: ['14:05:21', '14:05:21', '14:05:30', '14:05:42', '14:05:52', '14:06:01', '14:06:12'],
+            datasets: [{
+              label: 'Umidade em Cº',
+              backgroundColor: window.chartColors.red,
+              borderColor: window.chartColors.red,
+              data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor()
+              ],
+              fill: false,
+            }]
+          },
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Umidade'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: true
+            },
+            scales: {
+              xAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Momento'
+                }
+              }],
+              yAxes: [{
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Valor'
+                }
+              }]
+            }
+          }
+        };
+
+        function atualizarGrafico() {
+          configuracao2.data.datasets.forEach(function (dataset) {
+            dataset.data = dataset.data.map(function () {
+              return randomScalingFactor();
+            });
+
+          });
+
+          window.myLine2.update();
+
+          // chamar a própria função após 3 segundos (3000 ms)
+          setTimeout(() => {
+            atualizarGrafico();
+          }, 3000);
+        };
+
+      </script>
+
+
+      <script type="text/javascript">
+        // <![CDATA[
+        var ttChatLoaderS = document.createElement('script');
+        document.tomticketChatLoaderScriptVersion = 2;
+        ttChatLoaderS.src = 'https://supervisionbandtec.tomticket.com/scripts-chat/chat.min.js'
+          + '?id=EP36655'
+          + '&account=2345920P07112019054404'
+          + '&autoOpen=0'
+          + '&hideWhenOffline=0'
+          + '&d=supervisionbandtec'
+          + '&ts=' + new Date().getTime()
+          + '&ref=' + encodeURIComponent(document.URL);
+        document.body.appendChild(ttChatLoaderS);
+    //]]>
+      </script>
+
+      <!-- content viewport ends -->
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer">
+        <div class="row">
+          <div class="col-sm-6 text-center text-sm-right order-sm-1">
+            <ul class="text-gray">
+              <li><a href="#">Termos de Uso</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+            <small class="text-muted d-block">Copyright © 2019 <a href="http://www.uxcandy.co" target="_blank">Super
+                Vision</a>. All rights reserved</small>
+            <small class="text-gray mt-2">Handcrafted With <i class="mdi mdi-heart text-danger"></i></small>
+          </div>
+        </div>
+      </footer>
+      <!-- partial -->
     </div>
-    <!--page body ends -->
-    <!-- SCRIPT LOADING START FORM HERE /////////////-->
-    <!-- plugins:js -->
-    <script src="../assets/vendors/js/core.js"></script>
-    <!-- endinject -->
-    <!-- Vendor Js For This Page Ends-->
-    <script src="../assets/vendors/apexcharts/apexcharts.min.js"></script>
-    <script src="../assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="../assets/js/charts/chartjs.addon.js"></script>
-    <!-- Vendor Js For This Page Ends-->
-    <!-- build:js -->
-    <script src="../assets/js/template.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
-    <!-- endbuild -->
-  </body>
+    <!-- page content ends -->
+  </div>
+  <!--page body ends -->
+  <!-- SCRIPT LOADING START FORM HERE /////////////-->
+  <!-- plugins:js -->
+  <script src="../assets/vendors/js/core.js"></script>
+  <!-- endinject -->
+  <!-- Vendor Js For This Page Ends-->
+  <script src="../assets/vendors/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendors/chartjs/Chart.min.js"></script>
+  <script src="../assets/js/charts/chartjs.addon.js"></script>
+  <!-- Vendor Js For This Page Ends-->
+  <!-- build:js -->
+  <script src="../assets/js/template.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <!-- endbuild -->
+</body>
+
 </html>
