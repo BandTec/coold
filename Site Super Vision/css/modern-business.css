@@ -3,8 +3,26 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
-body {
+ body {
   padding-top: 56px;
+}
+
+.img1{
+position: absolute;
+width:1450px;
+height:650px;
+top:-90px;
+}
+.img3{
+position: absolute;
+width:700px;
+height:800px;
+top:-70px;
+}
+.imgrow{
+position: absolute;
+width:500px;
+height:300px;
 }
 
 .carousel-item {
@@ -19,4 +37,20 @@ body {
 
 .portfolio-item {
   margin-bottom: 30px;
+
+}
+.port1{
+  width: 348px;
+  height: 250px;
+
+}
+.port2{
+  width: 348px;
+  height: 250px;
+
+}
+.port3{
+  width: 348px;
+  height: 250px;
+
 }
