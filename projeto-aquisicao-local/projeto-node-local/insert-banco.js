@@ -76,12 +76,13 @@ function iniciar_escuta() {
 // função que recebe valores de temperatura e umidade
 // e faz um insert no banco de dados
 function registrar_leitura(temperatura, umidade) {
-
+    temperatura = temperatura - 15;
+    umidade = umidade + 35;
     if (efetuando_insert) {
         console.log('Execução em curso. Aguardando 7s...');
         setTimeout(() => {
             registrar_leitura(temperatura, umidade);
-        }, 7000);
+        }, 15000);
         return;
     }
 
