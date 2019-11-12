@@ -9,9 +9,9 @@
 
 .img1{
 position: absolute;
-width:1450px;
+width:1350px;
 height:650px;
-top:-90px;
+top:-130px;
 }
 .img3{
 position: absolute;
@@ -21,8 +21,8 @@ top:-70px;
 }
 .imgrow{
 position: absolute;
-width:500px;
-height:300px;
+width:450px;
+height:250px;
 }
 
 .carousel-item {
