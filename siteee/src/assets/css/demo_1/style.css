@@ -47,7 +47,7 @@
     padding-left: 18px; }
     .t-header .t-header-brand-wrapper a {
       display: flex;
-      align-items: center;
+      align-items: left;
       color: #f3f5f6;
       font-weight: 500;
       font-size: 1.25rem; }

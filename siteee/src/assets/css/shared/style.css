@@ -1764,12 +1764,12 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #696ffb;
-  border-color: #696ffb; }
+  background-color: #343a40;
+  border-color: #343a40; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #444bfa;
-    border-color: #373ffa; }
+    background-color: #212427;
+    border-color: #212427; }
   .btn-primary:focus, .btn-primary.focus {
     box-shadow: 0 0 0 0.2rem rgba(128, 133, 252, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {

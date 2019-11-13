@@ -9272,7 +9272,7 @@ footer {
       color: #ff4276; }
 
 .btn-group label.btn.btn-primary:not(:disabled):not(.disabled).active, .btn-group .step-wzard-container .btn-toolbar label.btn.sw-btn-next:not(:disabled):not(.disabled).active, .step-wzard-container .btn-toolbar .btn-group label.btn.sw-btn-next:not(:disabled):not(.disabled).active, .btn-group .step-wzard-container .btn-toolbar label.sw-btn-next.fc-button:not(:disabled):not(.disabled).active, .step-wzard-container .btn-toolbar .btn-group label.sw-btn-next.fc-button:not(:disabled):not(.disabled).active, .btn-group label.btn-primary.fc-button:not(:disabled):not(.disabled).active, .btn-group label.fc-button.fc-state-default:not(:disabled):not(.disabled).active, .btn-group label.btn.fc-state-default:not(:disabled):not(.disabled).active {
-  background: #0710f7; }
+  background: black; }
 
 .btn-group label.btn.btn-secondary:not(:disabled):not(.disabled).active, .btn-group label.btn-secondary.fc-button:not(:disabled):not(.disabled).active {
   background: #84a7f0; }
