@@ -52,7 +52,7 @@
             stacked: false,
             title: {
                 display: true,
-                text: 'Histórico recente de temperatura e umidade'
+                text: 'Monitoramento de temperatura e umidade no caminhão'
             },
             scales: {
                 yAxes: [{
@@ -122,7 +122,7 @@
                         // dos atributos que vem no JSON 
                         // que gerou na consulta ao banco de dados
 
-                        dados.labels.push(registro.momento);
+                        dados.labels.push(registro.momento_grafico);
 
                         dados.datasets[0].data.push(registro.temperatura);
                         dados.datasets[1].data.push(registro.umidade);
