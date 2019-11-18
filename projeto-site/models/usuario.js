@@ -31,11 +31,6 @@ module.exports = (sequelize, DataTypes) => {
 		CNPJ: {
 			type: DataTypes.STRING,
 			allowNull: false,
-		},
-		fkSensor: {
-			type: DataTypes.INTEGER,
-              references: 'sensor',
-              referencesKey: 'idSensor'
 		}
 	}, 
 	{

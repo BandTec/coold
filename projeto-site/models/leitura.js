@@ -24,6 +24,11 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.DATE,
 			allowNull: false
 		},
+		fkSensor: {
+			type: DataTypes.INTEGER,
+            references: 'sensor',
+            referencesKey: 'idSensor'
+		},
 		momento_grafico: {
 			type: DataTypes.VIRTUAL, // campo 'falso' (não existe na tabela). Deverá ser preenchido 'manualmente' no select
 			allowNull: true
