@@ -53,11 +53,13 @@
       font-size: 1.25rem; }
       .t-header .t-header-brand-wrapper a .logo {
         max-width: 100%;
-        width: 200px; }
+        width: 200px;
+       align-items: center;}
       .t-header .t-header-brand-wrapper a .logo-mini {
         display: none;
         max-width: 100%;
-        width: 35px; }
+        width: 35px;
+        align-items: center; }
       .t-header .t-header-brand-wrapper a p {
         color: inherit;
         font-size: inherit;
