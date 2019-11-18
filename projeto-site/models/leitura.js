@@ -7,7 +7,7 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 
 module.exports = (sequelize, DataTypes) => {
     let Leitura = sequelize.define('Leitura',{	
-		id: {
+		idLeitura: {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.REAL,
 			allowNull: false
 		},
-		momento: {
+		dataLeituras: {
 			type: DataTypes.DATE,
 			allowNull: false
 		},
