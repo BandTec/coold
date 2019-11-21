@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-12 logo-section">
           <a href="../../../../../index.html" class="logo">
-            <img style="height:60px;width:300px;margin-right:100px;position: absolute;margin-left:-80px;margin-top:-80px;" id= "imagem-logo"src="../../../../../../../documentacao/Fluxogramas/TESTELOGO4.png" alt="logo" />
+            <img style="height:60px;width:300px;margin-right:100px;position: absolute;margin-left:-80px;margin-top:-80px;" id= "imagem-logo"src="TESTELOGO4.png" alt="logo" />
           </a>
         </div>
       </div>
@@ -33,7 +33,7 @@
             <div class="grid-body">
               <div class="row">
                 <div class="col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper">
-                  <form action="#">
+                    <form id="form_login" method="post" onsubmit="return entrar()">
                     <div class="form-group input-rounded">
                       <input type="text" class="form-control" name="email" placeholder="Email" />
                     </div>
@@ -47,7 +47,7 @@
                         </label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block"> Login </button>
+                    <button id="btn_entrar" type="submit" class="btn btn-primary btn-block"> Login </button>
                   </form>
                   <div class="signup-link">
                     <p>Não tem uma conta ainda?</p>
@@ -74,5 +74,51 @@
     <!-- build:js -->
     <script src="../../../assets/js/template.js"></script>
     <!-- endbuild -->
+    <script>
+      function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    
+                    window.location.href = '../partials/index.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                response.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display = 'block';
+        div_erro.style.display = 'none';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display= 'none';
+        div_erro.style.display = 'block';
+        div_erro.innerHTML = resposta;
+    }
+    </script>
   </body>
 </html>
