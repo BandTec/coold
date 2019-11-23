@@ -119,7 +119,7 @@
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
     
                         resposta.reverse();
-    
+
                         for (i = 0; i < resposta.length; i++) {
                             var registro = resposta[i];
                         
@@ -130,6 +130,7 @@
                             
                             dados.labels.push(registro.momento_grafico);
                             dados.datasets[0].data.push(registro.umidade);
+                            
 
                             dadostemp.labels.push(registro.momento_grafico);
                             dadostemp.datasets[0].data.push(registro.temperatura);

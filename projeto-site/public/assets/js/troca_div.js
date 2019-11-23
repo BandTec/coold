@@ -12,7 +12,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="grafico" id="div_grafico"> COLOCAR TERMOMETRO AQUI</div>
+                    <div class="grafico" id="div_grafico">
+                    <div class="three"></div>
+                  </div>
                   </div>
                 </div>`;
   
@@ -20,7 +22,7 @@
       document.getElementById("umidade_real").innerHTML = `<div class="grid">
                   <div class="grid-body">
                     <p class="card-title">Umidade</p>
-                    <div id="radial-chart2">COLOCAR GOTAA AQUI</div>
+                    <div class="three2"></div>
                   </div>
                 </div>`;
   
@@ -48,7 +50,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="grafico" id="div_grafico"> COLOCAR TERMOMETROOO AQUI</div>
+                  <div class="grafico" id="div_grafico">
+                  <div class="one"></div></div>
                 </div>
               </div>`;
 
@@ -56,7 +59,7 @@
     document.getElementById("umidade_real").innerHTML = `<div class="grid">
                 <div class="grid-body">
                   <p class="card-title">Umidade</p>
-                  <div id="radial-chart2">COLOCAR GOTAAA AQUI</div>
+                  <div class="one2"></div>
                 </div>
               </div>`;
 
@@ -81,7 +84,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="grafico" id="div_grafico"> COLOCAR TERMOMETROOO AQUI</div>
+                    <div class="grafico" id="div_grafico">
+                    <div class="three"></div>
+                    </div>
                   </div>
                 </div>`;
   
@@ -89,7 +94,7 @@
       document.getElementById("umidade_real").innerHTML = `<div class="grid">
                   <div class="grid-body">
                     <p class="card-title">Umidade</p>
-                    <div id="radial-chart2">COLOCAR GOTAAA AQUI</div>
+                    <div class="three2"></div>
                   </div>
                 </div>`;
   

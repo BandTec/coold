@@ -18,12 +18,13 @@
   <!-- Layout style -->
   <link rel="shortcut icon" href="asssets/images/favicon.ico" />
 
+  <link rel="stylesheet" href="assets/css/demo_1/graficos.css">
+
   <!--- Graficos / Canvas -->
   <script src="assets/js/realmentedashboard.js"></script>
 
   <!--- Troca Divs -->
   <script src="assets/js/troca_div.js"></script>
-
 
   <script src="assets/js/charts/chartjs.min.js"></script>
   <script src="assets/js/charts/utils.js"></script>
@@ -182,7 +183,7 @@
                   <tbody>
                     <tr>
                       <td>
-                        <button onclick="caminhao1()">Caminhão 1</button><br>
+                        <button class="button button1" onclick="caminhao1()">Caminhão 1</button><br>
                         <small class="text-gray">AKR-4747</small>
                       </td>
                       <td class="text-danger font-weight-medium">
@@ -191,7 +192,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <button onclick="caminhao2()">Caminhão 2</button><br>
+                        <button class="button" onclick="caminhao2()">Caminhão 2</button><br>
                         <small class="text-gray">KRA-7474</small>
                       </td>
                       <td class="text-danger font-weight-medium">
@@ -200,7 +201,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <button onclick="caminhao3()">Caminhão 3</button><br>
+                        <button class="button" onclick="caminhao3()">Caminhão 3</button><br>
                         <small class="text-gray">LOP-8382</small>
                       </td>
                       <td class="text-danger font-weight-medium">
@@ -221,7 +222,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="grafico" id="div_grafico"> COLOCAR TERMOMETRO AQUI</div>
+                  <div class="grafico" id="div_grafico">
+                    <div class="three"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -229,7 +232,7 @@
               <div class="grid">
                 <div class="grid-body">
                   <p class="card-title">Umidade</p>
-                  <div id="radial-chart2">COLOCAR GOTA AQUI</div>
+                  <div class="three2"></div>
                 </div>
               </div>
             </div>
