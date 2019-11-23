@@ -19,18 +19,17 @@
             stacked: false,
             title: {
                 display: true,
-                text: 'Monitoramento de temperatura e umidade no caminhão'
+                text: 'Monitoramento de temperatura no caminhão'
             },
             scales: {
                 yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 100
+                    },
                     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
                     position: 'left',
-                    id: 'y-temperatura',
-                }, {
-                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                    display: true,
-                    position: 'right',
                     id: 'y-umidade',
 
                     // grid line settings
@@ -61,8 +60,8 @@
         scales: {
             yAxes: [{
                 ticks: {
-                    min: 0,
-                    max: 40
+                    min: -10,
+                    max: 30
                 },
                 type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                 display: true,
@@ -163,8 +162,8 @@
             });
 
             var ctx1 = canvas_temp.getContext('2d');
-    window.grafico_linha = Chart.Line(ctx1, {
-        data: dadostemp,
-        options: configurarGraficoTemp()
+            window.grafico_linha = Chart.Line(ctx1, {
+                data: dadostemp,
+                options: configurarGraficoTemp()
     });
         }
