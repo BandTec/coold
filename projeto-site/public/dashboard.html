@@ -18,6 +18,13 @@
   <!-- Layout style -->
   <link rel="shortcut icon" href="asssets/images/favicon.ico" />
 
+  <!--- Graficos / Canvas -->
+  <link rel="stylesheet" href="assets/js/realmentedashboard.js">
+
+  <!--- Troca Divs -->
+  <link rel="stylesheet" href="assets/js/troca_div.js">
+
+
   <script src="assets/js/charts/chartjs.min.js"></script>
   <script src="assets/js/charts/utils.js"></script>
   <style>
@@ -164,6 +171,47 @@
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-6 equel-grid">
+              <div class="grid table-responsive">
+                <table class="table table-stretched">
+                  <thead>
+                    <tr>
+                      <th>Caminhão</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <button onclick="caminhao1()">Caminhão 1</button><br>
+                        <small class="text-gray">AKR-4747</small>
+                      </td>
+                      <td class="text-danger font-weight-medium">
+                        <div class="badge badge-success">Bom</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button onclick="caminhao2()">Caminhão 2</button><br>
+                        <small class="text-gray">KRA-7474</small>
+                      </td>
+                      <td class="text-danger font-weight-medium">
+                        <div class="badge badge-danger">Ruim</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button onclick="caminhao3()">Caminhão 3</button><br>
+                        <small class="text-gray">LOP-8382</small>
+                      </td>
+                      <td class="text-danger font-weight-medium">
+                        <div class="badge badge-success">Bom</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="temperatura_real" class="col-lg-4 col-md-6 equel-grid">
               <div class="grid">
                 <div class="grid-body d-flex flex-column h-100">
                   <div class="wrapper">
@@ -177,7 +225,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 equel-grid">
+            <div id="umidade_real" class="col-lg-4 col-md-6 equel-grid">
               <div class="grid">
                 <div class="grid-body">
                   <p class="card-title">Umidade</p>
@@ -185,251 +233,19 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 equel-grid">
-              <div class="grid table-responsive">
-                <table class="table table-stretched">
-                  <thead>
-                    <tr>
-                      <th>Caminhão</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <p class="mb-n1 font-weight-medium">Caminhão 1</p>
-                        <small class="text-gray">AKR-4747</small>
-                      </td>
-                      <td class="text-danger font-weight-medium">
-                        <div class="badge badge-success">Bom</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p class="mb-n1 font-weight-medium">Caminhão 2</p>
-                        <small class="text-gray">KRA-7474</small>
-                      </td>
-                      <td class="text-danger font-weight-medium">
-                        <div class="badge badge-danger">Ruim</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p class="mb-n1 font-weight-medium">Caminhão 3</p>
-                        <small class="text-gray">LOP-8382</small>
-                      </td>
-                      <td class="text-danger font-weight-medium">
-                        <div class="badge badge-success">Bom</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p class="mb-n1 font-weight-medium">Caminhão 4</p>
-                        <small class="text-gray">BUM-6542</small>
-                      </td>
-                      <td class="text-success font-weight-medium">
-                        <div class="badge badge-success">Bom</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p class="mb-n1 font-weight-medium">Caminhão 5</p>
-                        <small class="text-gray">KOF-9798</small>
-                      </td>
-                      <td class="text-success font-weight-medium">
-                        <div class="badge badge-success">Bom</div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            <h2>Gráfico de Temperatura nas ultimas 4 horas</h2>
+            <div id="graf_temp" style="width:100%;">
+              <canvas id="canvas_temp"></canvas>
             </div>
-          </div>
+
+            <h2>Gráfico de Humildade nas ultimas 4 horas</h2>
+            <div id="graf_umid" style="width:100%;">
+              <canvas id="canvas_grafico"></canvas>
+            </div>
+          
         </div>
       </div>
-
-      <h2>Gráfico de Temperatura nas ultimas 4 horas</h2>
-      <div style="width:100%;">
-        <canvas id="canvas_grafico"></canvas>
-        
-      </div>
-      <div style="width:100%;">
-        <canvas id="canvas_temp"></canvas>
-        
-      </div>
-      <script>
-var exibiu_graficoTemp = false;
-        var exibiu_grafico = false;
-    
-       // verificar_autenticacao();
-    
-    
-        // só mexer se quiser alterar o tempo de atualização
-        // ou se souber o que está fazendo!
-        function atualizarGrafico() {
-            obterDadosGrafico();
-            setTimeout(atualizarGrafico, 10000);
-        }
-    
-        function configurarGrafico() {
-        var configuracoes = {
-            responsive: true,
-            animation: exibiu_grafico ? false : {duration: 1500},
-            hoverMode: 'index',
-            stacked: false,
-            title: {
-                display: true,
-                text: 'Monitoramento de temperatura e umidade no caminhão'
-            },
-            scales: {
-                yAxes: [{
-                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                    display: true,
-                    position: 'left',
-                    id: 'y-temperatura',
-                }, {
-                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                    display: true,
-                    position: 'right',
-                    id: 'y-umidade',
-
-                    // grid line settings
-                    gridLines: {
-                        drawOnChartArea: false, // only want the grid lines for one axis to show up
-                    },
-                }],
-            }
-        };
-
-        exibiu_grafico = true;
-
-        return configuracoes;
-    }
-
-        // altere aqui as configurações do gráfico
-        // (tamanhos, cores, textos, etc)
-        function configurarGraficoTemp() {
-    var configuracoes = {
-        responsive: true,
-        animation: exibiu_graficoTemp ? false : { duration: 1500 },
-        hoverMode: 'index',
-        stacked: false,
-        title: {
-            display: true,
-            text: 'Histórico recente de temperatura'
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    min: 0,
-                    max: 40
-                },
-                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                display: true,
-                position: 'left',
-                id: 'y-temperatura',
-            }
-            ],
-        }
-    };
-
-    exibiu_graficoTemp = true;
-
-    return configuracoes;
-}
-        // altere aqui como os dados serão exibidos
-        // e como são recuperados do BackEnd
-        function obterDadosGrafico() {
-    
-            // neste JSON tem que ser 'labels', 'datasets' etc, 
-            // porque é o padrão do Chart.js
-            var dados = {
-                labels: [],
-                datasets: [
-                    
-                    {
-                        yAxisID: 'y-umidade',
-                        label: 'Umidade',
-                        borderColor:["#394eff"],
-                        backgroundColor: ["#394eff"],
-                        fill: false,
-                        data: []
-                    }
-                ]
-            };
-
-
-    var dadostemp = {
-        labels: [],
-        datasets: [
-            {
-                yAxisID: 'y-temperatura',
-                label: 'Temperatura',
-                borderColor: '#C44848',
-                backgroundColor: '#C44848',
-                fill: false,
-                data: []
-            }
-        ]
-    };
-    
-            fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-    
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-    
-                        resposta.reverse();
-    
-                        for (i = 0; i < resposta.length; i++) {
-                            var registro = resposta[i];
-                        
-                            // aqui, após 'registro.' use os nomes 
-                            // dos atributos que vem no JSON 
-                            // que gerou na consulta ao banco de dados
-                            console.log(registro);
-                            
-                            dados.labels.push(registro.momento_grafico);
-                            dados.datasets[0].data.push(registro.umidade);
-
-                            dadostemp.labels.push(registro.momento_grafico);
-                            dadostemp.datasets[0].data.push(registro.temperatura);
-                         
-                        }
-                        console.log(JSON.stringify(dados));
-    
-                        //div_aguarde.style.display = 'none';
-    
-                        plotarGrafico(dados,dadostemp);
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-                .catch(function (error) {
-                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                });
-    
-        }
-    
-        // só altere aqui se souber o que está fazendo!
-        function plotarGrafico(dados, dadostemp) {
-            console.log('iniciando plotagem do gráfico...');
-    
-            var ctx = canvas_grafico.getContext('2d');
-            window.grafico_linha = Chart.Line(ctx, {
-                data: dados,
-                options: configurarGrafico()
-            });
-
-            var ctx1 = canvas_temp.getContext('2d');
-    window.grafico_linha = Chart.Line(ctx1, {
-        data: dadostemp,
-        options: configurarGraficoTemp()
-    });
-        }
-    
-    </script>
+    </div>
 
       <script type="text/javascript">
         // <![CDATA[
@@ -485,3 +301,111 @@ var exibiu_graficoTemp = false;
 </body>
 
 </html>
+
+<!-- JS da Troca de Divs (Ainda não consegui colocar em arquivo separado) -->
+
+<!-- Caminhão 1 -->
+<script>
+    function caminhao1() {
+      
+      //Temperatura em Tempo Real
+        document.getElementById("temperatura_real").innerHTML = `<div class="grid">
+                  <div class="grid-body d-flex flex-column h-100">
+                    <div class="wrapper">
+                      <div class="d-flex justify-content-between">
+                        <div class="split-header">
+                          <p class="card-title">Temperatura</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grafico" id="div_grafico"> COLOCAR TERMOMETRO AQUI</div>
+                  </div>
+                </div>`;
+  
+      //Umidade em Tempo Real
+      document.getElementById("umidade_real").innerHTML = `<div class="grid">
+                  <div class="grid-body">
+                    <p class="card-title">Umidade</p>
+                    <div id="radial-chart2">COLOCAR GOTA AQUI</div>
+                  </div>
+                </div>`;
+  
+      //Grafico Temperatura
+      document.getElementById("graf_temp").innerHTML = `<canvas id="canvas_temp"></canvas>`;
+  
+      //Grafico Humildade
+      document.getElementById("graf_umid").innerHTML = `<canvas id="canvas_grafico"></canvas>`;
+  }
+  </script>
+
+
+
+
+<!-- Caminhão 2 -->
+<script>
+  function caminhao2() {
+    
+    //Temperatura em Tempo Real
+      document.getElementById("temperatura_real").innerHTML = `<div class="grid">
+                <div class="grid-body d-flex flex-column h-100">
+                  <div class="wrapper">
+                    <div class="d-flex justify-content-between">
+                      <div class="split-header">
+                        <p class="card-title">Temperatura</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grafico" id="div_grafico"> COLOCAR TERMOMETROOO AQUI</div>
+                </div>
+              </div>`;
+
+    //Umidade em Tempo Real
+    document.getElementById("umidade_real").innerHTML = `<div class="grid">
+                <div class="grid-body">
+                  <p class="card-title">Umidade</p>
+                  <div id="radial-chart2">COLOCAR GOTAAA AQUI</div>
+                </div>
+              </div>`;
+
+    //Grafico Temperatura
+    document.getElementById("graf_temp").innerHTML = `<canvas id="canvas_temp"></canvas>`;
+
+    //Grafico Humildade
+    document.getElementById("graf_umid").innerHTML = `<canvas id="canvas_grafico"></canvas>`;
+}
+</script>
+
+
+<!-- Caminhão 3 -->
+<script>
+    function caminhao3() {
+      
+      //Temperatura em Tempo Real
+        document.getElementById("temperatura_real").innerHTML = `<div class="grid">
+                  <div class="grid-body d-flex flex-column h-100">
+                    <div class="wrapper">
+                      <div class="d-flex justify-content-between">
+                        <div class="split-header">
+                          <p class="card-title">Temperatura</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grafico" id="div_grafico"> COLOCAR TERMOMETROOO AQUI</div>
+                  </div>
+                </div>`;
+  
+      //Umidade em Tempo Real
+      document.getElementById("umidade_real").innerHTML = `<div class="grid">
+                  <div class="grid-body">
+                    <p class="card-title">Umidade</p>
+                    <div id="radial-chart2">COLOCAR GOTAAA AQUI</div>
+                  </div>
+                </div>`;
+  
+      //Grafico Temperatura
+      document.getElementById("graf_temp").innerHTML = `<canvas id="canvas_temp"></canvas>`;
+  
+      //Grafico Humildade
+      document.getElementById("graf_umid").innerHTML = `<canvas id="canvas_grafico"></canvas>`;
+  }
+  </script>
