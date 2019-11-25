@@ -24,7 +24,7 @@
             scales: {
                 yAxes: [{
                     ticks: {
-                        min: 0,
+                        min: 40,
                         max: 100
                     },
                     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
