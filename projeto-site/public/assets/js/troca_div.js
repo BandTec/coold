@@ -13,7 +13,7 @@
                       </div>
                     </div>
                     <div class="grafico" id="div_grafico">
-                    <div id="resultado"></div>
+                    <img src="imgs/green.png" alt="Estado: Bom">
                   </div>
                   </div>
                 </div>`;
@@ -22,7 +22,8 @@
       document.getElementById("umidade_real").innerHTML = `<div class="grid">
                   <div class="grid-body">
                     <p class="card-title">Umidade</p>
-                    <div class="three2"></div>
+                    <div class="div_imgs">
+                    <img src="imgs/green.png" alt="Estado: Bom">
                   </div>
                 </div>`;
   
@@ -51,7 +52,7 @@
                     </div>
                   </div>
                   <div class="grafico" id="div_grafico">
-                  <div id="resultado">a</div>
+                  <img src="imgs/red.png" alt="Estado: Emergencia">
                 </div>
               </div>`;
 
@@ -59,7 +60,8 @@
     document.getElementById("umidade_real").innerHTML = `<div class="grid">
                 <div class="grid-body">
                   <p class="card-title">Umidade</p>
-                  <div class="one2"></div>
+                  <div class="div_imgs">
+                  <img src="imgs/red.png" alt="Estado: Emergencia">
                 </div>
               </div>`;
 
@@ -73,13 +75,13 @@
 
 // Caminhão 3
     function caminhao3() {
-      if (temp_atual <= 8 || temp_atual >= 11){
-        resultado.innerHTML = `<img src="../../imgs/green.png" alt="Estado: Bom">`;
-    }else if (temp_atual == 9 || temp_atual == 10) {
-        resultado.innerHTML = `<img src="../../imgs/yellow.png" alt="Estado: Alerta">`;
-    }else {
-        resultado.innerHTML = `<img src="../../imgs/red.png" alt="Estado: Emergencia">`;
-    }
+    //  if (temp_atual <= 8 || temp_atual >= 11){
+      //  resultado.innerHTML = `<img src="../../imgs/green.png" alt="Estado: Bom">`;
+    //}else if (temp_atual == 9 || temp_atual == 10) {
+      //  resultado.innerHTML = `<img src="../../imgs/yellow.png" alt="Estado: Alerta">`;
+    //}else {
+     //   resultado.innerHTML = `<img src="../../imgs/red.png" alt="Estado: Emergencia">`;
+    //}
       
       //Temperatura em Tempo Real
         document.getElementById("temperatura_real").innerHTML = `<div class="grid">
@@ -92,7 +94,7 @@
                       </div>
                     </div>
                     <div class="grafico" id="div_grafico">
-                    <div id="resultado">a</div>
+                    <img src="imgs/green.png" alt="Estado: Bom">
                     </div>
                   </div>
                 </div>`;
@@ -101,7 +103,8 @@
       document.getElementById("umidade_real").innerHTML = `<div class="grid">
                   <div class="grid-body">
                     <p class="card-title">Umidade</p>
-                    <div class="three2"></div>
+                    <div class="div_imgs">
+                    <img src="imgs/green.png" alt="Estado: Bom">
                   </div>
                 </div>`;
   
