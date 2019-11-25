@@ -13,7 +13,7 @@
                       </div>
                     </div>
                     <div class="grafico" id="div_grafico">
-                    <div class="three"></div>
+                    <div id="resultado"></div>
                   </div>
                   </div>
                 </div>`;
@@ -51,7 +51,7 @@
                     </div>
                   </div>
                   <div class="grafico" id="div_grafico">
-                  <div class="one"></div></div>
+                  <div id="resultado">a</div>
                 </div>
               </div>`;
 
@@ -73,6 +73,13 @@
 
 // Caminhão 3
     function caminhao3() {
+      if (temp_atual <= 8 || temp_atual >= 11){
+        resultado.innerHTML = `<img src="../../imgs/green.png" alt="Estado: Bom">`;
+    }else if (temp_atual == 9 || temp_atual == 10) {
+        resultado.innerHTML = `<img src="../../imgs/yellow.png" alt="Estado: Alerta">`;
+    }else {
+        resultado.innerHTML = `<img src="../../imgs/red.png" alt="Estado: Emergencia">`;
+    }
       
       //Temperatura em Tempo Real
         document.getElementById("temperatura_real").innerHTML = `<div class="grid">
@@ -85,7 +92,7 @@
                       </div>
                     </div>
                     <div class="grafico" id="div_grafico">
-                    <div class="three"></div>
+                    <div id="resultado">a</div>
                     </div>
                   </div>
                 </div>`;

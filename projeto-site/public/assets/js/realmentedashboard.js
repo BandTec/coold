@@ -115,8 +115,12 @@
             fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
+
     
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var temp_atual = 0;
+                        var umid_atual = 0;
     
                         resposta.reverse();
 
@@ -130,10 +134,12 @@
                             
                             dados.labels.push(registro.momento_grafico);
                             dados.datasets[0].data.push(registro.umidade);
+                            umid_atual.innerHTML = registro.umidade;
                             
 
                             dadostemp.labels.push(registro.momento_grafico);
                             dadostemp.datasets[0].data.push(registro.temperatura);
+                            temp_atual.innerHTML = registro.temperatura;
                          
                         }
                         console.log(JSON.stringify(dados));
