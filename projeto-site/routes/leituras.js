@@ -14,8 +14,8 @@ router.get('/ultimas', function(req, res, next) {
 	const instrucaoSql = `select top ${limite_linhas} 
 						temperatura, 
 						umidade, 
-						dataLeituras,
-						FORMAT(dataLeituras,'HH:mm:ss') as momento_grafico 
+						dataLeitura,
+						FORMAT(dataLeitura,'HH:mm:ss') as momento_grafico 
 						from leitura order by idLeitura desc`;
 
 	sequelize.query(instrucaoSql, {
