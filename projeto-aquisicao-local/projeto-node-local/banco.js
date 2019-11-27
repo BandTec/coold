@@ -9,6 +9,7 @@ var configuracoes = {
         options: {
             encrypt: true
         },
+        // pool é o período de tempo que leva para a aplicação node ae conectar ao banco.
         pool: {
             max: 4,
             min: 1,
@@ -36,6 +37,7 @@ var perfil = desenvolvimento ? 'desenvolvimento' : 'producao';
 
 function conectar() {
   sql.close();
+  // "return" é a função que retorna os dados de acordo com os comandos executados
   return sql.connect(configuracoes[perfil])
 } 
 
