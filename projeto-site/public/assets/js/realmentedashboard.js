@@ -132,21 +132,44 @@
                             dados.labels.push(registro.momento_grafico);
                             dados.datasets[0].data.push(registro.umidade);
                             var umid_atual = registro.umidade;
-                            if(umid_atual > 10){
-
+                            if(umid_atual <= 90 || umid_atual >= 95){
+                                imgs.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
+                            } else if (umid_atual == 91 || umid_atual == 94) {
+                                imgs.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta">`;
+                            } else {
+                                imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
                             }
                             
 
                             dadostemp.labels.push(registro.momento_grafico);
                             dadostemp.datasets[0].data.push(registro.temperatura);
                             var temp_atual = registro.temperatura;
-                            if(temp_atual > 10){
-                                imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
-                            } else if (temp_atual < 10) {
-                                imgs.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
+                            if(temp_atual <= 8 || temp_atual >= 12){
+                                imgs2.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
+                            } else if (temp_atual == 9 || temp_atual == 11) {
+                                imgs2.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta">`;
+                            } else {
+                                imgs2.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
                             }
-                         
                         }
+
+                            
+
+                            if (temp_atual <= 8 || temp_atual >= 12 && umid_atual <= 90 || umid_atual >= 95){
+                                alerta.innerHTML = `<img src="imgs/Ruim.png" alt="Estado: Critico" height="30px">`;
+                                alerta2.innerHTML = `<img src="imgs/Ruim.png" alt="Estado: Critico" height="30px">`;
+                                alerta32.innerHTML = `<img src="imgs/Ruim.png" alt="Estado: Critico" height="30px">`;
+                            } else if (temp_atual == 9 || temp_atual == 11 && umid_atual == 91 || umid_atual == 94){
+                                alerta.innerHTML = `<img src="imgs/Medio.png" alt="Estado: Alerta" height="30px">`;
+                                alerta2.innerHTML = `<img src="imgs/Medio.png" alt="Estado: Alerta" height="30px">`;
+                                alerta32.innerHTML = `<img src="imgs/Medio.png" alt="Estado: Alerta" height="30px">`;
+                            } else {
+                                alerta.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
+                                alerta2.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
+                                alerta32.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
+                            }
+
+
                         console.log(JSON.stringify(dados));
     
                         //div_aguarde.style.display = 'none';

@@ -3624,7 +3624,7 @@ input[type="button"].btn-block {
 
 .badge-success {
   color: #212529;
-  background-color: #4CCEAC; }
+  background-color: rgb(207, 205, 47); }
   a.badge-success:hover, a.badge-success:focus {
     color: #212529;
     background-color: #32b593; }

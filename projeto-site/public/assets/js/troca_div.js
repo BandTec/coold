@@ -13,7 +13,7 @@
                       </div>
                     </div>
                     <div class="grafico" id="div_grafico">
-                    <img src="imgs/green.png" alt="Estado: Bom">
+                    <div id="imgs"></div>
                   </div>
                   </div>
                 </div>`;
@@ -23,7 +23,7 @@
                   <div class="grid-body">
                     <p class="card-title">Umidade</p>
                     <div class="div_imgs">
-                    <img src="imgs/green.png" alt="Estado: Bom">
+                    <div id="imgs2"></div>
                   </div>
                 </div>`;
   
@@ -52,7 +52,7 @@
                     </div>
                   </div>
                   <div class="grafico" id="div_grafico">
-                  <img src="imgs/red.png" alt="Estado: Emergencia">
+                  <div id="imgs"></div>
                 </div>
               </div>`;
 
@@ -61,7 +61,7 @@
                 <div class="grid-body">
                   <p class="card-title">Umidade</p>
                   <div class="div_imgs">
-                  <img src="imgs/red.png" alt="Estado: Emergencia">
+                  <div id="imgs2"></div>
                 </div>
               </div>`;
 
@@ -94,7 +94,7 @@
                       </div>
                     </div>
                     <div class="grafico" id="div_grafico">
-                    <img src="imgs/green.png" alt="Estado: Bom">
+                    <div id="imgs"></div>
                     </div>
                   </div>
                 </div>`;
@@ -104,7 +104,7 @@
                   <div class="grid-body">
                     <p class="card-title">Umidade</p>
                     <div class="div_imgs">
-                    <img src="imgs/green.png" alt="Estado: Bom">
+                    <div id="imgs2"></div>
                   </div>
                 </div>`;
   

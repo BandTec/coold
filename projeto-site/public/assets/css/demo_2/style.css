@@ -3627,13 +3627,13 @@ input[type="button"].btn-block {
 
 .badge-success {
   color: #212529;
-  background-color: #4CCEAC; }
+  background-color: rgb(204, 206, 76); }
   a.badge-success:hover, a.badge-success:focus {
     color: #212529;
-    background-color: #32b593; }
+    background-color: #b3b532; }
   a.badge-success:focus, a.badge-success.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(76, 206, 172, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(193, 206, 76, 0.5); }
 
 .badge-info {
   color: #fff;
