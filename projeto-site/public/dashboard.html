@@ -37,7 +37,7 @@
 </style>
 </head>
 
-<body class="header-fixed" onload="atualizarGrafico()">
+<body class="header-fixed" onload="atualizarGrafico()" onload="alertas()">
   <!-- partial:partials/_header.html -->
   <nav class="t-header">
     <div class="t-header-brand-wrapper">
@@ -225,7 +225,7 @@
                   </div>
                   <div class="grafico" id="div_grafico">
                     <div class="verde1">
-                      <img src="imgs/green.png" alt="Estado: Bom">
+                      <div id="imgs"></div>
                     </div>
                   </div>
                 </div>

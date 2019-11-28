@@ -118,9 +118,6 @@
 
     
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        var temp_atual = 0;
-                        var umid_atual = 0;
     
                         resposta.reverse();
 
@@ -134,12 +131,20 @@
                             
                             dados.labels.push(registro.momento_grafico);
                             dados.datasets[0].data.push(registro.umidade);
-                            umid_atual.innerHTML = registro.umidade;
+                            var umid_atual = registro.umidade;
+                            if(umid_atual > 10){
+
+                            }
                             
 
                             dadostemp.labels.push(registro.momento_grafico);
                             dadostemp.datasets[0].data.push(registro.temperatura);
-                            temp_atual.innerHTML = registro.temperatura;
+                            var temp_atual = registro.temperatura;
+                            if(temp_atual > 10){
+                                imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
+                            } else if (temp_atual < 10) {
+                                imgs.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
+                            }
                          
                         }
                         console.log(JSON.stringify(dados));
