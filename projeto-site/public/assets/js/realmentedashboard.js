@@ -8,7 +8,7 @@
         // ou se souber o que está fazendo!
         function atualizarGrafico() {
             obterDadosGrafico();
-            setTimeout(atualizarGrafico, 10000);
+            setTimeout(atualizarGrafico, 15000);
         }
     
         function configurarGrafico() {
@@ -133,23 +133,22 @@
                             dados.datasets[0].data.push(registro.umidade);
                             var umid_atual = registro.umidade;
                             if(umid_atual <= 90 || umid_atual >= 95){
-                                imgs.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
-                            } else if (umid_atual == 91 || umid_atual == 94) {
-                                imgs.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta">`;
-                            } else {
-                                imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
+                                imgs2.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico"> triste`;
+                            } else if (umid_atual <= 90.75 || umid_atual >= 93.75) {
+                                imgs2.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta"> neutro`;
+                            } else if (umid_atual > 90.75 && umid_atual < 93.75){
+                                imgs2.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom"> feliz`;
                             }
-                            
 
                             dadostemp.labels.push(registro.momento_grafico);
                             dadostemp.datasets[0].data.push(registro.temperatura);
                             var temp_atual = registro.temperatura;
                             if(temp_atual <= 8 || temp_atual >= 12){
-                                imgs2.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
-                            } else if (temp_atual == 9 || temp_atual == 11) {
-                                imgs2.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta">`;
-                            } else {
-                                imgs2.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
+                                imgs.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico"> triste`;
+                            } else if (temp_atual <= 9 || temp_atual >= 11) {
+                                imgs.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta"> neutro`;
+                            } else if(temp_atual > 9 && temp_atual < 11){
+                                imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom"> feliz`;
                             }
                         }
 

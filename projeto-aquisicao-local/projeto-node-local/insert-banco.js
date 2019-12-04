@@ -77,8 +77,8 @@ function iniciar_escuta() {
 // e faz um insert no banco de dados
 function registrar_leitura(temperatura, umidade) {
     // adequando temperatura e umidade em faixas
-    temperatura = temperatura - 15;
-    umidade = umidade + 30;
+    temperatura = temperatura - 8;
+    umidade = umidade + 41;
     // adequando temperatura e umidade em faixas fim
     if (efetuando_insert) {
         console.log('Execução em curso. Aguardando 7s...');
