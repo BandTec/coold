@@ -64,7 +64,7 @@
                       <div id="erro_cnpj" class="error_cnpj"></div>
                     </div>
                    
-                    <button type="submit" class="btn btn-primary btn-block"> Cadastre-se </button>
+                    <button type="submit" onclick="registro()" class="btn btn-primary btn-block"> Cadastre-se </button>
                   </form>
                   <div class="signup-link">
                     <p>Já tem uma conta?</p>
@@ -119,8 +119,21 @@
               });
               finalizar_aguardar();
           }
-        
-        if (Nome_sp.length <= 2) {
+      });
+
+      return false;
+  }
+
+  function aguardar() {
+      btn_entrar.disabled = true;
+  }
+
+  function finalizar_aguardar() {
+      btn_entrar.disabled = false;
+  }
+
+  function registro() {
+    if (Nome_sp.length <= 2) {
           erro_nome.innerHTML = `Insira um nome válido`;
         }
         if (Telefone_sp.length <= 9) {
@@ -138,18 +151,6 @@
         if (CNPJ_sp.length <= 10) {
           erro_cnpj.innerHTML = `Insira um CNPJ válido`;
         }
-
-      });
-
-      return false;
-  }
-
-  function aguardar() {
-      btn_entrar.disabled = true;
-  }
-
-  function finalizar_aguardar() {
-      btn_entrar.disabled = false;
   }
 
 </script>
