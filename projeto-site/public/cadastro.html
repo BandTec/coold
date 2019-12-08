@@ -6,7 +6,7 @@
     <title>página-cadastro-SuperVision</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.css" />
-    <link rel="stylesheet" href=assets/vendors/css/vendor.addons.css" />
+    <link rel="stylesheet" href="assets/vendors/css/vendor.addons.css" />
     <!-- endinject -->
     <!-- vendor css for this page -->
     <!-- End vendor css for this page -->
@@ -16,7 +16,9 @@
     <!-- Layout style -->
     <link rel="stylesheet" href="assets/css/demo_1/style.css">
     <!-- Layout style -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <script src="js/Validação.js"></script>
+
   </head>
   <body>
     <div class="authentication-theme auth-style_1">
@@ -35,22 +37,28 @@
                 <div class="col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper">
                   <form action="#">
                     <div class="form-group input-rounded">
-                      <input type="text" class="form-control" placeholder="Nome" />
+                      <input type="text" id="Nome" class="form-control" placeholder="Nome" />
+                      <div id="erro_nome" class="error_nome"></div>
                     </div>
                     <div class="form-group input-rounded">
-                      <input type="text" class="form-control" placeholder="Telefone" />
+                      <input type="text" id="Telefone" class="form-control" placeholder="Telefone" />
+                      <div id="erro_tele" class="error_tele"></div>
                     </div>
                     <div class="form-group input-rounded">
-                      <input type="text" class="form-control" placeholder="Email" />
+                      <input type="text" id="Email" class="form-control" placeholder="Email" />
+                      <div id="erro_email" class="error_email"></div>
                     </div>
                     <div class="form-group input-rounded">
-                      <input type="password" class="form-control" placeholder="Senha" />
+                      <input type="password" id="Senha" class="form-control" placeholder="Senha" />
+                      <div id="erro_senha" class="error_senha"></div>
                     </div>
                     <div class="form-group input-rounded">
-                        <input type="text" class="form-control" placeholder="Confirmar Senha" />
+                        <input type="password" id="Senha2" class="form-control" placeholder="Confirmar Senha" />
+                        <div id="erro_senha2" class="error_senha2"></div>
                     </div>
                     <div class="form-group input-rounded">
-                      <input type="text" class="form-control" placeholder="CNPJ" />
+                      <input type="text" id="CNPJ" class="form-control" placeholder="CNPJ" />
+                      <div id="erro_cnpj" class="error_cnpj"></div>
                     </div>
                    
                     <button type="submit" class="btn btn-primary btn-block"> Cadastre-se </button>
@@ -82,3 +90,63 @@
     <!-- endbuild -->
   </body>
 </html>
+<script>
+  var Nome_sp = Nome.value;
+  var Telefone_sp = Number(Telefone.value);
+  var Email_sp = Email.value;
+  var Senha_sp = Senha.value;
+  var Senha_sp2 = Senha2.value;
+  var CNPJ_sp = CNPJ.value;
+
+  function cadastrar() {
+      aguardar();
+      var formulario = new URLSearchParams(new FormData(form_cadastro));
+      fetch("/usuarios/cadastrar", {
+          method: "POST",
+          body: formulario
+      }).then(function (response) {
+         if (response.ok && Nome_sp.length > 2 && Telefone_sp.length >= 10 && Email_sp.endsWith(".com") || Email_sp.endsWith(".br")
+          && Senha_sp.length >= 4 && Senha_sp2.value == Senha_sp && CNPJ_sp.length >=11) {
+        alert(`Cadastrado com Sucesso ${Nome_sp}`);
+        window.location.href='login.html';
+        } else {
+              console.log('Erro de cadastro!');
+              response.text().then(function (resposta) {
+                  div_erro.innerHTML = resposta;
+              });
+              finalizar_aguardar();
+          }
+        
+        if (Nome_sp.length <= 2) {
+          erro_nome.innerHTML = `Insira um nome válido`;
+        }
+        if (Telefone_sp.length <= 9) {
+          erro_tele.innerHTML = `Insira um telefone válido`;
+        }
+        if (Email_sp.length <= 5) {
+          erro_email.innerHTML = `Insira um email válido`;
+        }
+        if (Senha_sp.length <= 3) {
+          erro_senha.innerHTML = `Insira uma senha válida`;
+        }
+        if (Senha_sp != Senha_sp2.value) {
+          erro_senha2.innerHTML = `Confirmação inválida`;
+        }
+        if (CNPJ_sp.length <= 10) {
+          erro_cnpj.innerHTML = `Insira um CNPJ válido`;
+        }
+
+      });
+
+      return false;
+  }
+
+  function aguardar() {
+      btn_entrar.disabled = true;
+  }
+
+  function finalizar_aguardar() {
+      btn_entrar.disabled = false;
+  }
+
+</script>
