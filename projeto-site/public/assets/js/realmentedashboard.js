@@ -158,11 +158,11 @@
                                 alerta.innerHTML = `<img src="imgs/Ruim.png" alt="Estado: Critico" height="30px">`;
                                 alerta2.innerHTML = `<img src="imgs/Ruim.png" alt="Estado: Critico" height="30px">`;
                                 alerta32.innerHTML = `<img src="imgs/Ruim.png" alt="Estado: Critico" height="30px">`;
-                            } else if (temp_atual == 9 || temp_atual == 11 && umid_atual == 91 || umid_atual == 94){
+                            } else if (temp_atual <= 9 || temp_atual >= 11 && umid_atual <= 90.75 || umid_atual >= 93.75){
                                 alerta.innerHTML = `<img src="imgs/Medio.png" alt="Estado: Alerta" height="30px">`;
                                 alerta2.innerHTML = `<img src="imgs/Medio.png" alt="Estado: Alerta" height="30px">`;
                                 alerta32.innerHTML = `<img src="imgs/Medio.png" alt="Estado: Alerta" height="30px">`;
-                            } else {
+                            } else if((temp_atual > 9 && temp_atual < 11) && (umid_atual > 90.75 && umid_atual < 93.75)){
                                 alerta.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
                                 alerta2.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
                                 alerta32.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
