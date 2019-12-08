@@ -133,22 +133,22 @@
                             dados.datasets[0].data.push(registro.umidade);
                             var umid_atual = registro.umidade;
                             if(umid_atual <= 90 || umid_atual >= 95){
-                                imgs2.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico"> triste`;
+                                imgs2.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
                             } else if (umid_atual <= 90.75 || umid_atual >= 93.75) {
-                                imgs2.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta"> neutro`;
+                                imgs2.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta">`;
                             } else if (umid_atual > 90.75 && umid_atual < 93.75){
-                                imgs2.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom"> feliz`;
+                                imgs2.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
                             }
 
                             dadostemp.labels.push(registro.momento_grafico);
                             dadostemp.datasets[0].data.push(registro.temperatura);
                             var temp_atual = registro.temperatura;
                             if(temp_atual <= 8 || temp_atual >= 12){
-                                imgs.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico"> triste`;
+                                imgs.innerHTML = `<img src="imgs/red.png" alt="Estado: Critico">`;
                             } else if (temp_atual <= 9 || temp_atual >= 11) {
-                                imgs.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta"> neutro`;
+                                imgs.innerHTML = `<img src="imgs/yellow.png" alt="Estado: Alerta">`;
                             } else if(temp_atual > 9 && temp_atual < 11){
-                                imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom"> feliz`;
+                                imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
                             }
                         }
 
