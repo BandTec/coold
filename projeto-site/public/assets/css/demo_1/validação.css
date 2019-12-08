@@ -1,4 +1,18 @@
 .error_nome {
-    font-size: 30%;
+    color: red;
+}
+.error_tele {
+    color: red;
+}
+.error_email {
+    color: red;
+}
+.error_senha {
+    color: red;
+}
+.error_senha2 {
+    color: red;
+}
+.error_cnpj {
     color: red;
 }

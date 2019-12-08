@@ -41,7 +41,7 @@
                   <form action="#">
                     <div class="form-group input-rounded">
                       <input type="text" id="Nome" class="form-control" placeholder="Nome" />
-                      <div id="erro_nome" class="error_nome">aa</div>
+                      <div id="erro_nome" class="error_nome"></div>
                     </div>
                     <div class="form-group input-rounded">
                       <input type="text" id="Telefone" class="form-control" placeholder="Telefone" />
@@ -133,22 +133,30 @@
   }
 
   function registro() {
-    if (Nome_sp.length <= 2) {
+    erro_nome.innerHTML = "";
+    erro_tele.innerHTML = "";
+    erro_email.innerHTML = "";
+    erro_senha.innerHTML = "";
+    erro_senha2.innerHTML = "";
+    erro_cnpj.innerHTML = "";
+
+
+    if (Nome.value.length <= 2) {
           erro_nome.innerHTML = `Insira um nome válido`;
         }
-        if (Telefone_sp.length <= 9) {
+        if (Telefone.value.length <= 9) {
           erro_tele.innerHTML = `Insira um telefone válido`;
         }
-        if (Email_sp.length <= 5) {
+        if (Email.value.length <= 5) {
           erro_email.innerHTML = `Insira um email válido`;
         }
-        if (Senha_sp.length <= 3) {
+        if (Senha.value.length <= 3) {
           erro_senha.innerHTML = `Insira uma senha válida`;
         }
-        if (Senha_sp != Senha_sp2.value) {
+        if (Senha.value != Senha2.value) {
           erro_senha2.innerHTML = `Confirmação inválida`;
         }
-        if (CNPJ_sp.length <= 10) {
+        if (CNPJ.value.length <= 10) {
           erro_cnpj.innerHTML = `Insira um CNPJ válido`;
         }
   }
