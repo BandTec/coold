@@ -2156,6 +2156,7 @@ fieldset:disabled a.fc-button {
   border-radius: 0.2rem; }
 
 .btn-block {
+  display: block;
   width: 100%; }
   .btn-block + .btn-block {
     margin-top: 0.5rem; }
