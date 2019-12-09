@@ -52,7 +52,7 @@
                     </div>
                   </div>
                   <div class="grafico" id="div_grafico">
-                  <div id="imgs"></div>
+                  <img src="imgs/green.png" alt="Estado: Bom">
                 </div>
               </div>`;
 
@@ -61,7 +61,7 @@
                 <div class="grid-body">
                   <p class="card-title">Umidade</p>
                   <div class="div_imgs">
-                  <div id="imgs2"></div>
+                  <img src="imgs/green.png" alt="Estado: Bom">
                 </div>
               </div>`;
 
