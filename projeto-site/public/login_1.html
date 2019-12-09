@@ -38,11 +38,10 @@
                     <form id="form_login" method="post" onsubmit="return entrar()">
                     <div class="form-group input-rounded">
                       <input id="email_txt" type="text" class="form-control" name="email" placeholder="Email" />
-                      <div id="erro_email" class="error_email"></div>
                     </div>
                     <div class="form-group input-rounded">
                       <input id="senha_txt" type="password" class="form-control" name="senha" placeholder="Senha" />
-                      <div id="erro_senha" class="error_senha"></div>
+                      <div id="erro_login" class="error_login"></div>
                     </div>
                     <div class="form-inline">
                       <div class="checkbox">
@@ -100,6 +99,8 @@
             } else {
 
                 console.log('Erro de login!');
+
+                erro_login.innerHTML = `E-mail ou Senha inválido`;
 
                 response.text().then(texto => {
                     console.error(texto);
