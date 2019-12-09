@@ -48,7 +48,7 @@
                         </label>
                       </div>
                     </div>
-                    <button id="btn_entrar" type="submit" class="btn btn-primary"> Login </button>
+                    <button id="btn_entrar" type="submit" class="btn btn-primary btn-block"> Login </button>
                   </form>
                   <div class="signup-link">
                     <p>Não tem uma conta ainda?</p>
@@ -97,6 +97,8 @@
             } else {
 
                 console.log('Erro de login!');
+
+                erro_senha.innerHTML = `Email ou Senha inválido!`;
 
                 response.text().then(texto => {
                     console.error(texto);
