@@ -51,8 +51,8 @@
                       </div>
                     </div>
                   </div>
-                  <img src="imgs/Bom.png" alt="Estado: Bom" height="30px">
-                  <img src="imgs/green.png" alt="Estado: Bom">
+                  <div class="grafico" id="div_grafico">
+                  <div id="imgs"></div>
                 </div>
               </div>`;
 
@@ -60,8 +60,8 @@
     document.getElementById("umidade_real").innerHTML = `<div class="grid">
                 <div class="grid-body">
                   <p class="card-title">Umidade</p>
-                  <img src="imgs/Bom.png" alt="Estado: Bom" height="30px">
-                  <img src="imgs/green.png" alt="Estado: Bom">
+                  <div class="div_imgs">
+                  <div id="imgs2"></div>
                 </div>
               </div>`;
 
