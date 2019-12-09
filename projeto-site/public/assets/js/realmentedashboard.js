@@ -150,7 +150,7 @@
                             } else if(temp_atual > 9 && temp_atual < 11){
                                 imgs.innerHTML = `<img src="imgs/green.png" alt="Estado: Bom">`;
                             }
-                        }
+                    
 
                             
 
@@ -167,6 +167,8 @@
                                 alerta2.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
                                 alerta32.innerHTML = `<img src="imgs/Bom.png" alt="Estado: Bom" height="30px">`;
                             }
+
+                        }
 
 
                         console.log(JSON.stringify(dados));
